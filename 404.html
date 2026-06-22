@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Mian Sports Flooring Pakistan</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Mian Sports Flooring homepage for sports flooring solutions in Pakistan.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/shared.css">
+
+  <style>
+    body {
+      font-family: 'Rajdhani', 'Barlow Condensed', sans-serif;
+      background: #050a05;
+      color: #f0fff4;
+      min-height: 100vh;
+      cursor: none;
+      overflow-x: hidden;
+    }
+
+    /* Cursor */
+    #cursor {
+      position: fixed; width: 36px; height: 36px;
+      border: 2px solid #39FF14; border-radius: 50%;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s, background .2s;
+    }
+    #cursor-dot {
+      position: fixed; width: 6px; height: 6px;
+      background: #39FF14; border-radius: 50%;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+    #cursor.hovered { width: 52px; height: 52px; background: rgba(57,255,20,0.08); }
+
+    /* Floating particles */
+    #particles {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    #particles span {
+      position: absolute; bottom: -10px; display: block;
+      background: #39FF14; border-radius: 50%; opacity: 0.15;
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Grid lines bg */
+    .grid-bg {
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative; z-index: 10;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
+      gap: 1.25rem;
+    }
+
+    .err-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem; letter-spacing: 6px;
+      text-transform: uppercase; color: #39FF14; opacity: 0.8;
+    }
+
+    .err-code {
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(7rem, 20vw, 13rem);
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 2px #39FF14;
+      text-shadow: 0 0 60px rgba(57,255,20,0.3);
+      animation: errPulse 3s ease-in-out infinite;
+      user-select: none;
+    }
+    @keyframes errPulse {
+      0%,100% { text-shadow: 0 0 40px rgba(57,255,20,0.3); }
+      50%      { text-shadow: 0 0 90px rgba(57,255,20,0.7); }
+    }
+
+    .err-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      letter-spacing: 4px; text-transform: uppercase;
+      color: #f0fff4;
+    }
+
+    .err-desc {
+      font-family: 'Rajdhani', sans-serif;
+      color: #a8c5b0; font-size: 1.05rem;
+      line-height: 1.7; max-width: 420px;
+    }
+
+    .err-links {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      justify-content: center; margin-top: 0.5rem;
+    }
+
+    .err-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 0.7rem 1.5rem; border-radius: 8px;
+      transition: all 0.3s; text-decoration: none;
+    }
+
+    .btn-green {
+      background: linear-gradient(135deg, #16a34a, #39FF14);
+      color: #050a05;
+    }
+    .btn-green:hover {
+      box-shadow: 0 8px 30px rgba(57,255,20,0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(57,255,20,0.3);
+      color: #a8c5b0;
+    }
+    .btn-ghost:hover {
+      border-color: #39FF14; color: #39FF14;
+      background: rgba(57,255,20,0.05);
+    }
+
+    /* Page nav links grid */
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem; max-width: 700px; width: 100%;
+      margin-top: 1rem;
+    }
+
+    .page-card {
+      background: rgba(17,35,24,0.7);
+      border: 1px solid rgba(57,255,20,0.1);
+      border-radius: 12px; padding: 1rem;
+      text-decoration: none; transition: all 0.3s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.4rem;
+    }
+    .page-card:hover {
+      border-color: #39FF14;
+      background: rgba(57,255,20,0.06);
+      transform: translateY(-3px);
+    }
+    .page-card .icon { font-size: 1.5rem; }
+    .page-card .label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem; letter-spacing: 2px;
+      text-transform: uppercase; color: #a8c5b0;
+    }
+
+    .divider {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, transparent, #39FF14, transparent);
+      margin: 0 auto;
+    }
+
+    /* WA float */
+    .wa-float {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 500;
+      width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; text-decoration: none;
+      box-shadow: 0 5px 25px rgba(37,211,102,0.5);
+      animation: waPulse 3s ease-in-out infinite;
+    }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 5px 25px rgba(37,211,102,0.5); }
+      50%      { box-shadow: 0 5px 50px rgba(37,211,102,0.8); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-dot"></div>
+
+  <!-- Background -->
+  <div class="grid-bg"></div>
+  <div id="particles"></div>
+
+  <!-- Main Content -->
+  <main class="content">
+    <span class="err-label">Mian Sports Flooring</span>
+    <div class="err-code">404</div>
+    <h1 class="err-title">Page Not Found</h1>
+    <div class="divider"></div>
+    <p class="err-desc">
+      The page you're looking for doesn't exist or may have been moved.
+      Let us guide you to the right surface.
+    </p>
+
+    <div class="err-links">
+      <a href="index.html" class="err-links a btn-green">← Go Home</a>
+      <a href="sports-whatsapp.html" class="err-links a btn-ghost">💬 Contact Us</a>
+    </div>
+
+    <p class="err-desc" style="font-size:0.85rem; margin-top: 0.5rem;">Or browse our product pages:</p>
+
+    <div class="page-grid">
+      <a href="gym_fitness_flooring.html" class="page-card">
+        <span class="icon">🏋️</span>
+        <span class="label">Gym Flooring</span>
+      </a>
+      <a href="basketball_court_flooring.html" class="page-card">
+        <span class="icon">🏀</span>
+        <span class="label">Basketball</span>
+      </a>
+      <a href="badminton-court-flooring.html" class="page-card">
+        <span class="icon">🏸</span>
+        <span class="label">Badminton</span>
+      </a>
+      <a href="running-track-surfaces.html" class="page-card">
+        <span class="icon">🏃</span>
+        <span class="label">Running Track</span>
+      </a>
+      <a href="martial-arts-combat-mats.html" class="page-card">
+        <span class="icon">🥋</span>
+        <span class="label">Martial Arts</span>
+      </a>
+      <a href="artificial_grass_turf.html" class="page-card">
+        <span class="icon">🌿</span>
+        <span class="label">Artificial Turf</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/923116928935?text=Hi%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20inquire%20about%20sports%20flooring."
+     class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    💬
+  </a>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

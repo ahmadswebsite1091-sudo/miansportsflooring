@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martial Arts & Combat Mats | Mian Sports Flooring Pakistan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rajdhani:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --green-bright: #39FF14;
+            --green-mid: #22c55e;
+            --green-dark: #16a34a;
+            --green-deep: #0d5c2e;
+            --black: #050a05;
+            --dark: #0b1a0f;
+            --dark2: #112318;
+            --charcoal: #1a2e1f;
+            --white: #f0fff4;
+            --silver: #a8c5b0;
+            --orange: #f97316;
+            --red: #ef4444;
+            --gold: #fbbf24;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            cursor: none;
+        }
+
+        /* CUSTOM CURSOR */
+        #cursor {
+            width: 18px; height: 18px;
+            border: 2px solid var(--green-bright);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transition: transform 0.12s ease;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+        }
+        #cursor.hovered { transform: translate(-50%,-50%) scale(2.5); border-color: var(--orange); }
+        #cursor-dot {
+            width: 5px; height: 5px;
+            background: var(--green-bright);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            transition: none;
+        }
+
+        /* PRELOADER */
+        #preloader {
+            position: fixed; inset: 0;
+            background: var(--black);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            z-index: 99998;
+            transition: opacity 0.8s, visibility 0.8s;
+        }
+        #preloader.gone { opacity: 0; visibility: hidden; pointer-events: none; }
+        .pre-icon {
+            font-size: 5rem;
+            animation: preSpinScale 1.4s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 20px var(--green-bright));
+        }
+        .pre-bar {
+            width: 200px; height: 3px;
+            background: rgba(57,255,20,0.15);
+            border-radius: 10px;
+            margin-top: 2rem;
+            overflow: hidden;
+        }
+        .pre-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--green-dark), var(--green-bright));
+            border-radius: 10px;
+            animation: preLoad 1.8s ease-in-out forwards;
+        }
+        @keyframes preLoad { 0%{width:0%} 100%{width:100%} }
+        .pre-text {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.3rem;
+            color: var(--green-bright);
+            letter-spacing: 5px;
+            margin-top: 1.5rem;
+            animation: pulse 1.5s ease-in-out infinite;
+            text-transform: uppercase;
+        }
+        @keyframes preSpinScale {
+            0% { transform: scale(0.85) rotate(-5deg); filter: drop-shadow(0 0 10px var(--green-bright)); }
+            100% { transform: scale(1.1) rotate(5deg); filter: drop-shadow(0 0 40px var(--green-bright)); }
+        }
+        @keyframes pulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            padding: 0.8rem 5%;
+            background: rgba(5,10,5,0.97);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 2px solid rgba(57,255,20,0.25);
+            animation: navDrop 0.8s ease-out;
+        }
+        @keyframes navDrop { from{transform:translateY(-100%);opacity:0} to{transform:translateY(0);opacity:1} }
+        .nav-inner {
+            max-width: 1400px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+        }
+        .nav-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; cursor: pointer; }
+        .nav-brand-icon { font-size: 2.5rem; filter: drop-shadow(0 0 12px rgba(57,255,20,0.7)); transition: filter 0.3s; }
+        .nav-brand:hover .nav-brand-icon { filter: drop-shadow(0 0 25px rgba(57,255,20,1)); }
+        .nav-brand-text {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.1rem; color: var(--white); letter-spacing: 1px; line-height: 1.1;
+        }
+        .nav-brand-text span { display: block; font-size: 0.7rem; color: var(--green-bright); letter-spacing: 3px; }
+        .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+        .nav-links a {
+            color: var(--silver); text-decoration: none;
+            font-size: 1rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+            position: relative; transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--green-bright);
+            transition: width 0.4s cubic-bezier(0.77,0,0.175,1);
+        }
+        .nav-links a:hover { color: var(--green-bright); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--green-bright); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta {
+            padding: 0.65rem 1.8rem;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black); border: none; border-radius: 50px;
+            font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase; cursor: pointer;
+            box-shadow: 0 0 20px rgba(57,255,20,0.4); transition: all 0.3s;
+        }
+        .nav-cta:hover { transform: translateY(-3px); box-shadow: 0 0 40px rgba(57,255,20,0.8); }
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .nav-hamburger span { width: 25px; height: 2px; background: var(--green-bright); display: block; transition: 0.3s; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex; align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(135deg, rgba(5,10,5,0.93) 0%, rgba(13,92,46,0.45) 55%, rgba(5,10,5,0.97) 100%),
+                url('https://images.unsplash.com/photo-1555597673-b21d5c935865?w=1800&q=80') center/cover no-repeat;
+        }
+        .hero-lines {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(57,255,20,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(57,255,20,0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        /* Animated scan line */
+        .hero-scan {
+            position: absolute; inset: 0;
+            background: linear-gradient(transparent 49%, rgba(57,255,20,0.03) 50%, transparent 51%);
+            background-size: 100% 4px;
+            animation: scanLines 8s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scanLines { 0%{background-position:0 0} 100%{background-position:0 100px} }
+        .hero-particles { position: absolute; inset: 0; overflow: hidden; }
+        .hero-particles span {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: var(--green-bright);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+            opacity: 0;
+        }
+        @keyframes floatParticle {
+            0%{transform:translateY(100vh) scale(0);opacity:0}
+            10%{opacity:1}
+            90%{opacity:1}
+            100%{transform:translateY(-20px) scale(1.5);opacity:0}
+        }
+        .hero-inner {
+            max-width: 1400px; margin: 0 auto; width: 100%;
+            padding: 9rem 5% 5rem;
+            display: grid; grid-template-columns: 1fr 1fr;
+            align-items: center; gap: 4rem;
+            position: relative; z-index: 2;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 0.4rem 1.2rem;
+            border: 1px solid var(--green-bright); border-radius: 50px;
+            font-size: 0.82rem; color: var(--green-bright);
+            letter-spacing: 3px; text-transform: uppercase;
+            margin-bottom: 1.8rem;
+            animation: fadeUp 1s ease 0.3s both;
+        }
+        .hero-badge::before { content: '●'; font-size: 0.6rem; animation: blink 1.5s infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+        .hero-h1 {
+            font-family: 'Russo One', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: 1.05;
+            text-transform: uppercase; margin-bottom: 1.5rem;
+            animation: fadeUp 1s ease 0.5s both;
+        }
+        .hero-h1 .line1 { color: var(--white); display: block; }
+        .hero-h1 .line2 {
+            display: block;
+            background: linear-gradient(90deg, var(--green-bright), var(--gold), var(--green-mid));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-h1 .line3 { color: var(--white); display: block; font-size: 0.6em; letter-spacing: 4px; color: var(--silver); }
+        .hero-p {
+            font-size: 1.2rem; color: var(--silver);
+            max-width: 540px; line-height: 1.8;
+            margin-bottom: 2.5rem;
+            animation: fadeUp 1s ease 0.7s both;
+        }
+        .hero-btns { display: flex; gap: 1.2rem; flex-wrap: wrap; animation: fadeUp 1s ease 0.9s both; }
+        .btn-g {
+            padding: 1rem 2.4rem;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black); border: none; border-radius: 8px;
+            font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            cursor: pointer; position: relative; overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 5px 25px rgba(57,255,20,0.4);
+        }
+        .btn-g:hover { transform: translateY(-4px); box-shadow: 0 10px 40px rgba(57,255,20,0.7); }
+        .btn-o {
+            padding: 1rem 2.4rem;
+            background: transparent; color: var(--white);
+            border: 2px solid var(--orange); border-radius: 8px;
+            font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s;
+        }
+        .btn-o:hover { background: var(--orange); color: var(--black); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(249,115,22,0.5); }
+
+        /* Hero Visual — animated belt ranks */
+        .hero-visual {
+            display: flex; align-items: center; justify-content: center;
+            animation: fadeUp 1s ease 0.4s both;
+            position: relative;
+        }
+        .belt-aura {
+            position: absolute;
+            width: 380px; height: 380px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(57,255,20,0.15) 0%, transparent 70%);
+            animation: pulseAura 3s ease-in-out infinite;
+        }
+        @keyframes pulseAura { 0%,100%{transform:scale(1);opacity:0.7} 50%{transform:scale(1.15);opacity:1} }
+        .hero-mat-card {
+            width: 340px; background: var(--charcoal);
+            border-radius: 20px; border: 2px solid rgba(57,255,20,0.35);
+            overflow: hidden; position: relative; z-index: 2;
+            box-shadow: 0 0 60px rgba(57,255,20,0.2), 0 30px 80px rgba(0,0,0,0.6);
+            animation: heroCardFloat 5s ease-in-out infinite;
+        }
+        @keyframes heroCardFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+        .hero-mat-img {
+            width: 100%; height: 220px; object-fit: cover;
+            filter: saturate(1.3) contrast(1.1);
+        }
+        .hero-mat-body { padding: 1.5rem; }
+        .hero-mat-label {
+            font-family: 'Oswald', sans-serif; font-size: 0.75rem;
+            color: var(--green-bright); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;
+        }
+        .hero-mat-title {
+            font-family: 'Russo One', sans-serif; font-size: 1.4rem; color: var(--white);
+            text-transform: uppercase; margin-bottom: 1rem;
+        }
+        .hero-mat-specs { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .spec-pill {
+            padding: 0.25rem 0.8rem;
+            background: rgba(57,255,20,0.1); border: 1px solid rgba(57,255,20,0.3);
+            border-radius: 50px; font-size: 0.78rem; color: var(--green-mid); letter-spacing: 0.5px;
+        }
+        .hero-floating-tag {
+            position: absolute; top: -20px; right: -10px;
+            background: var(--gold); color: var(--black);
+            font-family: 'Russo One', sans-serif; font-size: 0.75rem;
+            padding: 0.5rem 1rem; border-radius: 50px; letter-spacing: 2px;
+            text-transform: uppercase; z-index: 3;
+            box-shadow: 0 5px 20px rgba(251,191,36,0.5);
+            animation: tagBob 3s ease-in-out infinite;
+        }
+        @keyframes tagBob { 0%,100%{transform:rotate(-2deg) translateY(0)} 50%{transform:rotate(2deg) translateY(-6px)} }
+        .hero-scroll {
+            position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+            color: var(--silver); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+        .hero-scroll::after { content: '▼'; color: var(--green-bright); font-size: 1rem; }
+        @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-10px)} }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+
+        /* MARQUEE */
+        .marquee-bar {
+            background: var(--green-dark); padding: 0.8rem 0; overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid var(--green-bright);
+            border-bottom: 1px solid var(--green-bright);
+        }
+        .marquee-track { display: inline-block; animation: marqueeScroll 30s linear infinite; }
+        .marquee-track span {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem; font-weight: 500;
+            color: var(--black); letter-spacing: 2px; text-transform: uppercase;
+            margin: 0 2rem;
+        }
+        .marquee-track span::before { content: '🥋 '; }
+        @keyframes marqueeScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+        /* SHARED SECTION STYLES */
+        .section-full { padding: 6rem 5%; }
+        .s-label {
+            font-family: 'Oswald', sans-serif; font-size: 0.85rem;
+            color: var(--green-bright); letter-spacing: 4px; text-transform: uppercase;
+            margin-bottom: 0.6rem; display: block;
+        }
+        .s-title {
+            font-family: 'Russo One', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            text-transform: uppercase; color: var(--white); line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .s-title span {
+            background: linear-gradient(90deg, var(--green-bright), var(--gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .s-desc { color: var(--silver); font-size: 1.15rem; max-width: 680px; line-height: 1.8; }
+        .s-header-center { text-align: center; }
+        .s-header-center .s-desc { margin: 0 auto; }
+
+        /* REVEAL ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal-left { opacity: 0; transform: translateX(-60px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal-right { opacity: 0; transform: translateX(60px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.shown,.reveal-left.shown,.reveal-right.shown { opacity: 1; transform: none; }
+
+        /* ===== DISCIPLINE CARDS (PRODUCTS SECTION) ===== */
+        .products-section { background: var(--dark); }
+        .prod-header { margin-bottom: 3.5rem; }
+        .prod-grid {
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+        }
+        .prod-card {
+            background: var(--charcoal);
+            border-radius: 20px; overflow: hidden;
+            border: 1px solid rgba(57,255,20,0.12);
+            transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+            position: relative;
+        }
+        .prod-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--green-bright);
+            box-shadow: 0 25px 70px rgba(57,255,20,0.25);
+        }
+        .prod-img-wrap { position: relative; overflow: hidden; height: 230px; }
+        .prod-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+        .prod-card:hover .prod-img-wrap img { transform: scale(1.08); }
+        .prod-img-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(13,92,46,0.4) 0%, rgba(5,10,5,0.8) 60%);
+            transition: opacity 0.4s;
+        }
+        .prod-card[data-color="red"] .prod-img-overlay { background: linear-gradient(135deg, rgba(239,68,68,0.3) 0%, rgba(5,10,5,0.8) 60%); }
+        .prod-card[data-color="gold"] .prod-img-overlay { background: linear-gradient(135deg, rgba(251,191,36,0.3) 0%, rgba(5,10,5,0.8) 60%); }
+        .prod-card[data-color="blue"] .prod-img-overlay { background: linear-gradient(135deg, rgba(59,130,246,0.3) 0%, rgba(5,10,5,0.8) 60%); }
+        .prod-card[data-color="purple"] .prod-img-overlay { background: linear-gradient(135deg, rgba(168,85,247,0.3) 0%, rgba(5,10,5,0.8) 60%); }
+        .prod-card[data-color="orange"] .prod-img-overlay { background: linear-gradient(135deg, rgba(249,115,22,0.3) 0%, rgba(5,10,5,0.8) 60%); }
+        .prod-img-tag {
+            position: absolute; top: 1rem; right: 1rem;
+            background: var(--green-dark); color: var(--white);
+            font-family: 'Oswald', sans-serif; font-size: 0.75rem;
+            padding: 0.25rem 0.9rem; border-radius: 50px; letter-spacing: 2px; text-transform: uppercase;
+            border: 1px solid rgba(57,255,20,0.4);
+        }
+        .prod-rating {
+            position: absolute; bottom: 1rem; left: 1rem;
+            color: var(--gold); font-size: 0.95rem; letter-spacing: 2px;
+        }
+        .prod-body { padding: 1.8rem; }
+        .prod-cat {
+            font-size: 0.78rem; color: var(--green-bright);
+            letter-spacing: 3px; text-transform: uppercase;
+            margin-bottom: 0.4rem; font-family: 'Oswald', sans-serif;
+        }
+        .prod-name {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.4rem; color: var(--white);
+            margin-bottom: 0.8rem; text-transform: uppercase;
+        }
+        .prod-desc { color: var(--silver); font-size: 0.98rem; line-height: 1.7; margin-bottom: 1.3rem; }
+        .prod-features {
+            list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;
+        }
+        .prod-features li {
+            padding: 0.2rem 0.8rem;
+            background: rgba(57,255,20,0.08); border: 1px solid rgba(57,255,20,0.2);
+            border-radius: 50px; font-size: 0.8rem; color: var(--green-mid); letter-spacing: 0.5px;
+        }
+        .prod-btn {
+            display: block; width: 100%; padding: 0.9rem;
+            background: linear-gradient(135deg, var(--green-deep), var(--green-dark));
+            color: var(--white); border: 1px solid var(--green-mid);
+            border-radius: 10px;
+            font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase;
+            cursor: pointer; text-align: center; transition: all 0.3s;
+        }
+        .prod-btn:hover {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black); box-shadow: 0 5px 20px rgba(57,255,20,0.4);
+        }
+
+        /* ===== DISCIPLINE DISCIPLINES (MARTIAL ARTS TYPES) ===== */
+        .disciplines-section { background: var(--dark2); }
+        .disc-grid {
+            max-width: 1400px; margin: 3rem auto 0;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+        }
+        .disc-card {
+            position: relative; border-radius: 16px; overflow: hidden; cursor: pointer;
+            height: 280px;
+            transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+            border: 1px solid rgba(57,255,20,0.1);
+        }
+        .disc-card:hover { transform: scale(1.04); box-shadow: 0 20px 60px rgba(57,255,20,0.3); border-color: var(--green-bright); }
+        .disc-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+        .disc-card:hover img { transform: scale(1.1); }
+        .disc-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(5,10,5,0.95) 0%, rgba(5,10,5,0.2) 60%, transparent 100%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 1.5rem;
+        }
+        .disc-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .disc-name {
+            font-family: 'Russo One', sans-serif; font-size: 1.4rem;
+            color: var(--white); text-transform: uppercase; line-height: 1;
+        }
+        .disc-sub { font-size: 0.85rem; color: var(--green-bright); letter-spacing: 2px; margin-top: 0.3rem; }
+        .disc-hover-bar {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--green-bright), var(--gold));
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+        }
+        .disc-card:hover .disc-hover-bar { transform: scaleX(1); }
+
+        /* ===== WHY US ===== */
+        .why-section { background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%); }
+        .why-inner {
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+        }
+        .why-visual { position: relative; }
+        .why-img-main { width: 100%; border-radius: 20px; overflow: hidden; border: 2px solid rgba(57,255,20,0.3); }
+        .why-img-main img { width: 100%; height: 420px; object-fit: cover; filter: saturate(1.3) contrast(1.1); }
+        .why-img-float {
+            position: absolute; bottom: -30px; right: -25px;
+            width: 190px; border-radius: 15px; overflow: hidden;
+            border: 3px solid var(--green-bright);
+            box-shadow: 0 10px 40px rgba(57,255,20,0.4);
+            animation: floatBadge 4s ease-in-out infinite;
+        }
+        .why-img-float img { width: 100%; height: 130px; object-fit: cover; }
+        @keyframes floatBadge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        .why-badge-overlay {
+            position: absolute; top: -20px; left: -20px;
+            background: var(--green-dark); border: 2px solid var(--green-bright);
+            border-radius: 12px; padding: 1rem 1.5rem; text-align: center;
+            box-shadow: 0 10px 30px rgba(57,255,20,0.3);
+        }
+        .why-badge-num {
+            font-family: 'Russo One', sans-serif; font-size: 2.5rem; color: var(--green-bright); line-height: 1;
+        }
+        .why-badge-txt { font-size: 0.72rem; color: var(--white); letter-spacing: 1px; }
+        .why-list { list-style: none; margin-top: 2.5rem; }
+        .why-list li {
+            display: flex; align-items: flex-start; gap: 1.2rem;
+            padding: 1.2rem 0; border-bottom: 1px solid rgba(57,255,20,0.1);
+            transition: padding-left 0.3s;
+        }
+        .why-list li:hover { padding-left: 0.5rem; }
+        .why-list-icon {
+            flex-shrink: 0; width: 44px; height: 44px;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem;
+        }
+        .why-list-title {
+            font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: var(--white);
+            font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .why-list-desc { font-size: 0.98rem; color: var(--silver); margin-top: 0.2rem; }
+
+        /* ===== STATS ===== */
+        .stats-section {
+            background: var(--green-deep); padding: 5rem 5%;
+            position: relative; overflow: hidden;
+        }
+        .stats-section::before {
+            content: 'MARTIAL ARTS';
+            position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Russo One', sans-serif;
+            font-size: 12vw; color: rgba(255,255,255,0.03);
+            text-transform: uppercase; white-space: nowrap; pointer-events: none;
+        }
+        .stats-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 2rem; position: relative; z-index: 1;
+        }
+        .stat-card {
+            text-align: center; padding: 2.5rem 2rem;
+            background: rgba(255,255,255,0.05); border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s;
+        }
+        .stat-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-6px); }
+        .stat-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+        .stat-num {
+            font-family: 'Russo One', sans-serif; font-size: 3.8rem;
+            color: var(--white); line-height: 1;
+        }
+        .stat-suf { color: var(--green-bright); }
+        .stat-lbl { font-size: 0.95rem; color: rgba(255,255,255,0.6); letter-spacing: 2px; text-transform: uppercase; margin-top: 0.5rem; }
+
+        /* ===== SPECIFICATIONS TABLE ===== */
+        .specs-section { background: var(--dark); }
+        .specs-inner { max-width: 1100px; margin: 3rem auto 0; }
+        .specs-tabs {
+            display: flex; gap: 0.5rem; margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(57,255,20,0.15);
+            flex-wrap: wrap;
+        }
+        .spec-tab {
+            padding: 0.7rem 1.8rem;
+            background: transparent; border: none;
+            font-family: 'Oswald', sans-serif; font-size: 1rem;
+            color: var(--silver); letter-spacing: 2px; text-transform: uppercase;
+            cursor: pointer; position: relative; transition: color 0.3s;
+        }
+        .spec-tab.active { color: var(--green-bright); }
+        .spec-tab::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 0; height: 2px; background: var(--green-bright); transition: width 0.4s;
+        }
+        .spec-tab.active::after { width: 100%; }
+        .specs-table { width: 100%; border-collapse: collapse; }
+        .specs-table th {
+            background: rgba(57,255,20,0.1); color: var(--green-bright);
+            font-family: 'Oswald', sans-serif; font-size: 0.85rem;
+            letter-spacing: 3px; text-transform: uppercase; padding: 1rem 1.5rem; text-align: left;
+            border-bottom: 2px solid rgba(57,255,20,0.2);
+        }
+        .specs-table td {
+            padding: 1rem 1.5rem; color: var(--silver); border-bottom: 1px solid rgba(57,255,20,0.08);
+            font-size: 1rem; transition: background 0.2s;
+        }
+        .specs-table tr:hover td { background: rgba(57,255,20,0.04); color: var(--white); }
+        .specs-table td:first-child { color: var(--white); font-weight: 600; font-family: 'Oswald', sans-serif; letter-spacing: 1px; }
+        .spec-badge {
+            display: inline-block; padding: 0.15rem 0.7rem;
+            border-radius: 50px; font-size: 0.75rem; font-family: 'Oswald', sans-serif;
+            letter-spacing: 1px; text-transform: uppercase;
+        }
+        .spec-badge.green { background: rgba(57,255,20,0.15); color: var(--green-bright); border: 1px solid rgba(57,255,20,0.3); }
+        .spec-badge.gold { background: rgba(251,191,36,0.15); color: var(--gold); border: 1px solid rgba(251,191,36,0.3); }
+        .spec-panel { display: none; }
+        .spec-panel.active { display: block; animation: fadeUp 0.4s ease; }
+
+        /* ===== INSTALLATION PROCESS ===== */
+        .process-section { background: var(--dark2); }
+        .process-inner { max-width: 1100px; margin: 3.5rem auto 0; }
+        .process-steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+        .process-steps::before {
+            content: ''; position: absolute; left: 30px; top: 0; bottom: 0;
+            width: 2px; background: linear-gradient(to bottom, var(--green-bright), rgba(57,255,20,0.1));
+        }
+        .process-step {
+            display: flex; gap: 2rem; align-items: flex-start;
+            padding: 2rem 0 2rem 0; position: relative;
+        }
+        .step-num {
+            flex-shrink: 0; width: 62px; height: 62px;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-family: 'Russo One', sans-serif; font-size: 1.4rem; color: var(--black);
+            position: relative; z-index: 1;
+            box-shadow: 0 0 20px rgba(57,255,20,0.4);
+        }
+        .step-content { flex: 1; padding-top: 1rem; }
+        .step-title {
+            font-family: 'Russo One', sans-serif; font-size: 1.5rem;
+            color: var(--white); text-transform: uppercase; margin-bottom: 0.5rem;
+        }
+        .step-desc { color: var(--silver); font-size: 1.05rem; line-height: 1.7; }
+        .step-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.8rem; }
+        .step-tag {
+            padding: 0.2rem 0.8rem;
+            background: rgba(57,255,20,0.08); border: 1px solid rgba(57,255,20,0.2);
+            border-radius: 50px; font-size: 0.8rem; color: var(--green-mid);
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-section { background: var(--dark); overflow: hidden; padding: 5rem 0; }
+        .gallery-header { text-align: center; padding: 0 5%; margin-bottom: 3rem; }
+        .gallery-track-wrapper { overflow: hidden; }
+        .gallery-strip {
+            display: flex; gap: 1.5rem;
+            animation: galleryScroll 35s linear infinite;
+            width: max-content;
+        }
+        .gallery-strip:hover { animation-play-state: paused; }
+        .gallery-strip.reverse { animation-direction: reverse; margin-top: 1.5rem; }
+        .gallery-img {
+            width: 300px; height: 200px; border-radius: 12px; overflow: hidden; flex-shrink: 0;
+            border: 2px solid rgba(57,255,20,0.15); transition: all 0.4s; position: relative;
+        }
+        .gallery-img:hover { border-color: var(--green-bright); transform: scale(1.05); box-shadow: 0 10px 40px rgba(57,255,20,0.4); }
+        .gallery-img img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-img-label {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(transparent, rgba(5,10,5,0.92));
+            font-size: 0.82rem; color: var(--green-bright);
+            letter-spacing: 1px; text-transform: uppercase; font-family: 'Oswald', sans-serif;
+        }
+        @keyframes galleryScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+        /* ===== CERTIFICATIONS ===== */
+        .certs-section { background: var(--charcoal); padding: 4rem 5%; }
+        .certs-inner { max-width: 1200px; margin: 0 auto; }
+        .certs-grid {
+            display: flex; gap: 2rem; flex-wrap: wrap;
+            align-items: center; justify-content: center; margin-top: 3rem;
+        }
+        .cert-badge {
+            display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+            padding: 2rem 2.5rem; background: var(--dark2);
+            border-radius: 16px; border: 1px solid rgba(57,255,20,0.2);
+            transition: all 0.3s; min-width: 150px;
+        }
+        .cert-badge:hover {
+            border-color: var(--green-bright);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(57,255,20,0.2);
+        }
+        .cert-icon { font-size: 2.5rem; }
+        .cert-name {
+            font-family: 'Russo One', sans-serif; font-size: 1rem;
+            color: var(--green-bright); text-transform: uppercase; letter-spacing: 1px; text-align: center;
+        }
+        .cert-body { font-size: 0.8rem; color: var(--silver); text-align: center; letter-spacing: 1px; }
+
+        /* ===== TESTIMONIALS ===== */
+        .testi-section { background: var(--dark2); }
+        .testi-grid {
+            max-width: 1400px; margin: 3rem auto 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+        }
+        .testi-card {
+            background: var(--charcoal); border-radius: 20px; padding: 2.5rem;
+            border: 1px solid rgba(57,255,20,0.1);
+            position: relative; overflow: hidden; transition: all 0.4s;
+        }
+        .testi-card::before {
+            content: '"'; position: absolute; top: 1rem; left: 1.5rem;
+            font-size: 7rem; color: rgba(57,255,20,0.08);
+            font-family: 'Russo One', sans-serif; line-height: 1;
+        }
+        .testi-card:hover { border-color: var(--green-bright); transform: translateY(-8px); box-shadow: 0 15px 50px rgba(57,255,20,0.2); }
+        .testi-stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 1rem; }
+        .testi-text { color: var(--silver); font-size: 1.08rem; line-height: 1.8; margin-bottom: 2rem; font-style: italic; position: relative; z-index: 1; }
+        .testi-author { display: flex; align-items: center; gap: 1rem; }
+        .testi-avatar {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Russo One', sans-serif; font-size: 1.2rem; color: var(--black); flex-shrink: 0;
+        }
+        .testi-name { font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: var(--white); font-weight: 600; letter-spacing: 1px; }
+        .testi-role { font-size: 0.88rem; color: var(--green-mid); }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background:
+                linear-gradient(135deg, rgba(5,10,5,0.92) 0%, rgba(13,92,46,0.6) 50%, rgba(5,10,5,0.94) 100%),
+                url('Karate%20Dojo%20_%20karate%20ussd%20dojo%20studio%20more%20dojo%20decor%20dojo%20studio%20art%20studios%20dojo%20___.jpg') center/cover no-repeat;
+            padding: 7rem 5%; text-align: center;
+        }
+        .cta-inner { max-width: 900px; margin: 0 auto; }
+        .cta-icon { font-size: 4rem; margin-bottom: 1.5rem; animation: logoFloat 4s ease-in-out infinite; display: block; }
+        @keyframes logoFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+        .cta-title {
+            font-family: 'Russo One', sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem);
+            text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; line-height: 1.1;
+        }
+        .cta-title span { color: var(--green-bright); }
+        .cta-desc { font-size: 1.25rem; color: var(--silver); margin-bottom: 3rem; line-height: 1.8; }
+        .cta-btns { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-section { background: var(--dark); }
+        .contact-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+        }
+        .contact-info-title {
+            font-family: 'Russo One', sans-serif; font-size: 1.8rem; color: var(--white); text-transform: uppercase; margin-bottom: 1.5rem;
+        }
+        .contact-info-desc { color: var(--silver); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; }
+        .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
+        .contact-item {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 1rem 1.5rem; background: var(--charcoal);
+            border-radius: 12px; border: 1px solid rgba(57,255,20,0.1);
+            transition: border-color 0.3s;
+        }
+        .contact-item:hover { border-color: rgba(57,255,20,0.4); }
+        .contact-item-icon {
+            width: 42px; height: 42px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
+        }
+        .contact-item-text { font-size: 1rem; color: var(--white); font-weight: 600; }
+        .contact-item-sub { font-size: 0.85rem; color: var(--silver); }
+        .contact-form { background: var(--charcoal); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(57,255,20,0.15); }
+        .form-title {
+            font-family: 'Russo One', sans-serif; font-size: 1.6rem; color: var(--white); text-transform: uppercase; margin-bottom: 1.5rem;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+        .form-group label { font-family: 'Oswald', sans-serif; font-size: 0.85rem; color: var(--green-bright); letter-spacing: 2px; text-transform: uppercase; }
+        .form-group input, .form-group select, .form-group textarea {
+            background: var(--dark2); border: 1px solid rgba(57,255,20,0.2);
+            border-radius: 10px; padding: 0.85rem 1.2rem;
+            color: var(--white); font-family: 'Rajdhani', sans-serif; font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s; outline: none;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--green-bright); box-shadow: 0 0 20px rgba(57,255,20,0.15);
+        }
+        .form-group select option { background: var(--dark2); }
+        .form-group textarea { resize: vertical; min-height: 110px; }
+        .form-submit {
+            width: 100%; padding: 1rem;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black); border: none; border-radius: 12px;
+            font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: all 0.3s;
+            box-shadow: 0 5px 25px rgba(57,255,20,0.3);
+        }
+        .form-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(57,255,20,0.5); }
+
+        /* ===== FOOTER ===== */
+        footer { background: #020704; padding: 4rem 5% 2rem; border-top: 2px solid rgba(57,255,20,0.2); }
+        .footer-grid {
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem; margin-bottom: 3rem;
+        }
+        .footer-brand-icon { font-size: 3rem; margin-bottom: 1rem; filter: drop-shadow(0 0 12px rgba(57,255,20,0.5)); display: block; }
+        .footer-brand-name {
+            font-family: 'Russo One', sans-serif; font-size: 1.2rem; color: var(--white);
+            text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 2px;
+        }
+        .footer-brand-desc { font-size: 0.95rem; color: var(--silver); line-height: 1.7; margin-bottom: 1.5rem; }
+        .footer-socials { display: flex; gap: 0.8rem; }
+        .footer-soc {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: var(--charcoal); border: 1px solid rgba(57,255,20,0.2);
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; color: var(--silver); font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .footer-soc:hover { background: var(--green-dark); border-color: var(--green-bright); color: var(--white); transform: translateY(-3px); }
+        .footer-col h4 {
+            font-family: 'Oswald', sans-serif; font-size: 1rem; color: var(--white);
+            letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem; border-bottom: 1px solid rgba(57,255,20,0.2);
+        }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+        .footer-col ul a { color: var(--silver); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        .footer-col ul a:hover { color: var(--green-bright); padding-left: 4px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.8rem; }
+        .contact-icon { font-size: 1.1rem; flex-shrink: 0; }
+        .footer-contact-item > span:last-child { color: var(--silver); font-size: 0.92rem; }
+        .footer-contact-item a { color: var(--silver); text-decoration: none; transition: color 0.3s; }
+        .footer-contact-item a:hover { color: var(--green-bright); }
+        .footer-bottom {
+            max-width: 1400px; margin: 0 auto;
+            padding-top: 2rem; border-top: 1px solid rgba(57,255,20,0.1);
+            display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+            font-size: 0.88rem; color: rgba(255,255,255,0.4);
+        }
+        .footer-bottom span span { color: var(--green-bright); }
+
+        /* ===== BACK TO TOP ===== */
+        .back-top {
+            position: fixed; bottom: 2rem; right: 2rem;
+            width: 48px; height: 48px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black); border: none; cursor: pointer;
+            font-size: 1.3rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 5px 20px rgba(57,255,20,0.4);
+            opacity: 0; transition: all 0.4s; transform: translateY(20px); z-index: 500;
+        }
+        .back-top.visible { opacity: 1; transform: translateY(0); }
+        .back-top:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(57,255,20,0.6); }
+
+        /* GLITCH EFFECT on headings */
+        .glitch-hover {
+            position: relative; display: inline-block;
+        }
+        .glitch-hover:hover::before, .glitch-hover:hover::after {
+            content: attr(data-text);
+            position: absolute; top: 0; left: 0;
+            font-family: inherit; font-size: inherit;
+            white-space: nowrap;
+        }
+        .glitch-hover:hover::before {
+            color: var(--green-bright); clip: rect(44px, 450px, 56px, 0);
+            animation: glitchA 0.4s infinite linear;
+            transform: translate(-2px);
+        }
+        .glitch-hover:hover::after {
+            color: var(--orange); clip: rect(20px, 450px, 30px, 0);
+            animation: glitchB 0.5s infinite linear;
+            transform: translate(2px);
+        }
+        @keyframes glitchA { 0%{clip:rect(10px,450px,20px,0)} 25%{clip:rect(60px,450px,70px,0)} 50%{clip:rect(30px,450px,40px,0)} 75%{clip:rect(80px,450px,90px,0)} 100%{clip:rect(10px,450px,20px,0)} }
+        @keyframes glitchB { 0%{clip:rect(50px,450px,60px,0)} 25%{clip:rect(20px,450px,30px,0)} 50%{clip:rect(70px,450px,80px,0)} 75%{clip:rect(40px,450px,50px,0)} 100%{clip:rect(50px,450px,60px,0)} }
+
+        /* MOBILE */
+        @media(max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-p { max-width: 100%; }
+            .hero-btns { justify-content: center; }
+            .hero-visual { display: none; }
+            .prod-grid { grid-template-columns: repeat(2, 1fr); }
+            .disc-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-inner { grid-template-columns: 1fr; }
+            .why-img-float { display: none; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .testi-grid { grid-template-columns: 1fr; }
+            .contact-inner { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media(max-width: 640px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .prod-grid { grid-template-columns: 1fr; }
+            .disc-grid { grid-template-columns: 1fr 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .certs-grid { gap: 1rem; }
+        }
+    </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/shared.css">
+  
+  
+  <meta name="author" content="Mian Sports Flooring">
+  <meta name="geo.region" content="PK">
+  <meta name="geo.placename" content="Pakistan">
+  <meta property="og:title" content="Martial Arts & Combat Mats | Mian Sports Flooring Pakistan">
+  <meta property="og:description" content="Professional martial arts mats in Pakistan. Judo, MMA, Karate, BJJ and wrestling mats. IJF-certified tatami surfaces.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miansportsflooring.com/martial-arts-combat-mats.html">
+  <meta property="og:site_name" content="Mian Sports Flooring">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://miansportsflooring.com/martial-arts-combat-mats.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <meta name="description" content="Professional martial arts mats in Pakistan. Supply and installation of Judo, MMA, Karate, BJJ and wrestling mats. IJF-certified tatami surfaces. Free delivery and installation across Pakistan.">
+  <meta name="keywords" content="martial arts mats Pakistan, judo mats, MMA mats, karate mats, tatami flooring, BJJ mats Pakistan, wrestling mats, combat sports flooring">
+  <meta name="author" content="Mian Sports Flooring">
+  <meta name="geo.region" content="PK">
+  <meta name="geo.placename" content="Pakistan">
+  <meta property="og:title" content="Martial Arts & Combat Mats | Mian Sports Flooring Pakistan">
+  <meta property="og:description" content="Professional martial arts mats in Pakistan. Supply and installation of Judo, MMA, Karate, BJJ and wrestling mats. IJF-certified tatami surfaces. Free delivery and installation across Pakistan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miansportsflooring.com/martial-arts-combat-mats.html">
+  <meta property="og:site_name" content="Mian Sports Flooring">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Martial Arts & Combat Mats | Mian Sports Flooring Pakistan">
+  <meta name="twitter:description" content="Professional martial arts mats in Pakistan. Supply and installation of Judo, MMA, Karate, BJJ and wrestling mats. IJF-certified tatami surfaces. Free delivery and installation across Pakistan.">
+  <link rel="canonical" href="https://miansportsflooring.com/martial-arts-combat-mats.html">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="pre-icon">🥋</div>
+    <div class="pre-bar"><div class="pre-fill"></div></div>
+    <div class="pre-text">Loading Combat Mats</div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img loading="lazy" src="Mian Sports Flooring logo display.png" alt="Mian Sports Flooring" class="nav-logo-img" onerror="this.style.display='none'">
+      <div class="nav-brand-text">
+        <strong>Mian Sports Flooring</strong>
+        <small>Premium Sports Surfaces · Pakistan</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gym_fitness_flooring.html">Gym Flooring</a></li>
+      <li><a href="basketball_court_flooring.html">Basketball</a></li>
+      <li><a href="badminton-court-flooring.html">Badminton</a></li>
+      <li><a href="running-track-surfaces.html">Running Track</a></li>
+      <li><a href="martial-arts-combat-mats.html">Martial Arts</a></li>
+      <li><a href="artificial_grass_turf.html">Turf</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="sports-whatsapp.html" class="nav-cta">Get Free Quote</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+  <button class="mobile-close" id="mobile-close" aria-label="Close navigation menu">✕</button>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="gym_fitness_flooring.html">🏋️ Gym Flooring</a>
+    <a href="basketball_court_flooring.html">🏀 Basketball Courts</a>
+    <a href="badminton-court-flooring.html">🏸 Badminton Courts</a>
+    <a href="running-track-surfaces.html">🏃 Running Tracks</a>
+    <a href="martial-arts-combat-mats.html">🥋 Martial Arts Mats</a>
+    <a href="artificial_grass_turf.html">🌿 Artificial Turf</a>
+    <a href="sports-whatsapp.html" class="mobile-cta">📞 Get Free Quote</a>
+  </nav>
+</div>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+  <button class="mobile-close" id="mobile-close" aria-label="Close navigation menu">✕</button>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="gym_fitness_flooring.html">🏋️ Gym Flooring</a>
+    <a href="basketball_court_flooring.html">🏀 Basketball Courts</a>
+    <a href="badminton-court-flooring.html">🏸 Badminton Courts</a>
+    <a href="running-track-surfaces.html">🏃 Running Tracks</a>
+    <a href="martial-arts-combat-mats.html">🥋 Martial Arts Mats</a>
+    <a href="artificial_grass_turf.html">🌿 Artificial Turf</a>
+    <a href="https://wa.me/923000000000" class="mobile-cta">📞 Get Free Quote</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-scan"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="hero-badge">Pakistan's #1 Martial Arts Mat Supplier</div>
+            <h1 class="hero-h1">
+                <span class="line1">MASTER YOUR</span>
+                <span class="line2">COMBAT ARENA</span>
+                <span class="line3">Premium Martial Arts & Combat Mats — Est. 2014</span>
+            </h1>
+            <p class="hero-p">From Olympic Tatami to professional MMA cages — we engineer surfaces that protect warriors, amplify performance, and withstand 10,000 hours of punishment. 10+ years. 300+ dojos. Zero compromises.</p>
+            <div class="hero-btns">
+                <button class="btn-g" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">🥊 Explore Mats</button>
+                <button class="btn-o" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Free Consultation</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="belt-aura"></div>
+            <div class="hero-mat-card">
+                <div class="hero-floating-tag">⭐ IJF Approved</div>
+                <img loading="lazy" class="hero-mat-img" src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=600&q=80" alt="Martial Arts Mat" />
+                <div class="hero-mat-body">
+                    <div class="hero-mat-label">Featured Product</div>
+                    <div class="hero-mat-title">Olympic Judo Tatami</div>
+                    <div class="hero-mat-specs">
+                        <span class="spec-pill">40mm Thickness</span>
+                        <span class="spec-pill">EVA Foam Core</span>
+                        <span class="spec-pill">IJF Certified</span>
+                        <span class="spec-pill">Anti-Slip Base</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+    <div class="marquee-track">
+        <span>Judo Tatami</span><span>MMA Mats</span><span>Karate Mats</span>
+        <span>BJJ Mats</span><span>Wrestling Mats</span><span>Taekwondo Mats</span>
+        <span>Kickboxing Mats</span><span>Gymnastics Mats</span><span>Boxing Ring Canvas</span>
+        <span>Judo Tatami</span><span>MMA Mats</span><span>Karate Mats</span>
+        <span>BJJ Mats</span><span>Wrestling Mats</span><span>Taekwondo Mats</span>
+        <span>Kickboxing Mats</span><span>Gymnastics Mats</span><span>Boxing Ring Canvas</span>
+    </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section-full products-section" id="products">
+    <div style="max-width:1400px;margin:0 auto">
+        <div class="prod-header reveal">
+            <span class="s-label">Our Product Range</span>
+            <h2 class="s-title glitch-hover" data-text="COMBAT-GRADE MAT SYSTEMS">COMBAT-GRADE <span>MAT SYSTEMS</span></h2>
+            <p class="s-desc">Every surface engineered to meet international standards — from amateur dojo training to Olympic-level competition.</p>
+        </div>
+        <div class="prod-grid">
+            <div class="prod-card reveal" data-color="green">
+                <div class="prod-img-wrap">
+                    <img src="download%20(80800).jpg" alt="Judo Tatami Mat" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Competition</div>
+                    <div class="prod-rating">★★★★★</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Judo / Jiu-Jitsu</div>
+                    <h3 class="prod-name">Olympic Tatami Mats</h3>
+                    <p class="prod-desc">IJF-certified tatami with perfect grip-release balance, 40mm EVA foam core, and moisture-wicking surface for elite competition and club training.</p>
+                    <ul class="prod-features">
+                        <li>IJF Certified</li><li>40mm EVA Core</li><li>Anti-Slip Base</li><li>Washable PVC</li><li>Interlocking</li>
+                    </ul>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Request Quote</button>
+                </div>
+            </div>
+
+            <div class="prod-card reveal" data-color="red">
+                <div class="prod-img-wrap">
+                    <img src="ad%20eBay%20_%20%249999_00%20_%2030%27%20x%2040%27%20x%201%207_8_%20Dollamur%20Flexi-Connect%20MMA%20Wrestling%20Mat%20READ%20DESCRIPTION%20%233.jpg" alt="MMA Training Mat" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">MMA / Cage</div>
+                    <div class="prod-rating">★★★★★</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">MMA & Combat Sports</div>
+                    <h3 class="prod-name">Professional MMA Mats</h3>
+                    <p class="prod-desc">Heavy-duty vinyl-covered mats designed for takedowns, grappling, and striking. Superior impact absorption and tear resistance for the toughest training.</p>
+                    <ul class="prod-features">
+                        <li>2" Cross-Linked Foam</li><li>Vinyl Covered</li><li>Anti-Tear</li><li>Custom Print</li><li>Cage-Floor Ready</li>
+                    </ul>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Request Quote</button>
+                </div>
+            </div>
+
+            <div class="prod-card reveal" data-color="gold">
+                <div class="prod-img-wrap">
+                    <img src="Karate%20Mats%20for%20Professional%20Training%20and%20Competition.jpg" alt="Karate & Taekwondo Mat" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Striking Arts</div>
+                    <div class="prod-rating">★★★★★</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Karate / Taekwondo</div>
+                    <h3 class="prod-name">Karate Puzzle Mats</h3>
+                    <p class="prod-desc">WKF & WT approved interlocking foam mats with textured surface for bare-foot grip, cushioning falls without restricting fast footwork.</p>
+                    <ul class="prod-features">
+                        <li>WKF Approved</li><li>WT Compliant</li><li>20mm / 25mm</li><li>Puzzle Interlocking</li><li>Non-Toxic EVA</li>
+                    </ul>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Request Quote</button>
+                </div>
+            </div>
+
+            <div class="prod-card reveal" data-color="blue">
+                <div class="prod-img-wrap">
+                    <img src="wrestiling%20.jpg" alt="Wrestling Mat" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Olympic Sport</div>
+                    <div class="prod-rating">★★★★★</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Wrestling</div>
+                    <h3 class="prod-name">Competition Wrestling Mats</h3>
+                    <p class="prod-desc">FILA/UWW-certified single-piece or modular wrestling mats with painted scoring circles, high-density foam, and certified vinyl covers.</p>
+                    <ul class="prod-features">
+                        <li>UWW Certified</li><li>Painted Circles</li><li>2-3" Foam</li><li>Seamless Option</li><li>Roll-Up Design</li>
+                    </ul>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Request Quote</button>
+                </div>
+            </div>
+
+            <div class="prod-card reveal" data-color="purple">
+                <div class="prod-img-wrap">
+                    <img src="crapling%20.jpg" alt="BJJ Grappling Mat" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Grappling</div>
+                    <div class="prod-rating">★★★★★</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Brazilian Jiu-Jitsu</div>
+                    <h3 class="prod-name">BJJ Grappling Mats</h3>
+                    <p class="prod-desc">Specialized BJJ mats with tatami-texture top for gi friction, 50mm thickness for safe throws, and seamless roll construction — ideal for academies.</p>
+                    <ul class="prod-features">
+                        <li>50mm Thickness</li><li>Tatami Texture</li><li>Roll Format</li><li>Seamless Surface</li><li>Gi-Grip Optimized</li>
+                    </ul>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Request Quote</button>
+                </div>
+            </div>
+
+            <div class="prod-card reveal" data-color="orange">
+                <div class="prod-img-wrap">
+                    <img src="Double%20mini%20and%20tumbling%20_%20trampolining%20competition_.jpg" alt="Gymnastics Crash Mat" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Gymnastics</div>
+                    <div class="prod-rating">★★★★★</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Gymnastics / Acrobatics</div>
+                    <h3 class="prod-name">Crash & Landing Mats</h3>
+                    <p class="prod-desc">Ultra-thick crash mats (10–40cm) for gymnastics, acrobatics, and aerial training. High-density foam with durable nylon covers and Velcro connection straps.</p>
+                    <ul class="prod-features">
+                        <li>10–40cm Thickness</li><li>Nylon Cover</li><li>Velcro Connectors</li><li>Folding Design</li><li>Custom Colors</li>
+                    </ul>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DISCIPLINES -->
+<section class="section-full disciplines-section" id="disciplines">
+    <div style="max-width:1400px;margin:0 auto">
+        <div class="s-header-center reveal">
+            <span class="s-label">Every Martial Art Covered</span>
+            <h2 class="s-title">DISCIPLINES WE <span>SERVE</span></h2>
+            <p class="s-desc">From ancient traditions to modern combat sports — we have the perfect surface for every warrior's art.</p>
+        </div>
+        <div class="disc-grid">
+            <div class="disc-card reveal" style="transition-delay:0s">
+                <img loading="lazy" src="Judo.jpg" alt="Judo">
+                <div class="disc-overlay">
+                    <div class="disc-icon">🥋</div>
+                    <div class="disc-name">JUDO</div>
+                    <div class="disc-sub">IJF Certified Tatami</div>
+                </div>
+                <div class="disc-hover-bar"></div>
+            </div>
+            <div class="disc-card reveal" style="transition-delay:0.1s">
+                <img loading="lazy" src="MMA%20Cage%20-%205m%20Fold%20Away.jpg" alt="MMA">
+                <div class="disc-overlay">
+                    <div class="disc-icon">🥊</div>
+                    <div class="disc-name">MMA</div>
+                    <div class="disc-sub">Cage & Octagon Floors</div>
+                </div>
+                <div class="disc-hover-bar"></div>
+            </div>
+            <div class="disc-card reveal" style="transition-delay:0.2s">
+                <img loading="lazy" src="de9ij.jpg" alt="Karate">
+                <div class="disc-overlay">
+                    <div class="disc-icon">🏅</div>
+                    <div class="disc-name">KARATE</div>
+                    <div class="disc-sub">WKF Approved Mats</div>
+                </div>
+                <div class="disc-hover-bar"></div>
+            </div>
+            <div class="disc-card reveal" style="transition-delay:0.3s">
+                <img loading="lazy" src="Resilite%20Wrestling%20Mats%20Gallery.jpg" alt="Wrestling">
+                <div class="disc-overlay">
+                    <div class="disc-icon">🤼</div>
+                    <div class="disc-name">WRESTLING</div>
+                    <div class="disc-sub">UWW Competition Grade</div>
+                </div>
+                <div class="disc-hover-bar"></div>
+            </div>
+            <div class="disc-card reveal" style="transition-delay:0.1s">
+                <img loading="lazy" src="Grappling%20MMA%20Mats%201-1_2%20Inch%20x%201x1%20Meter.jpg" alt="BJJ">
+                <div class="disc-overlay">
+                    <div class="disc-icon">🎽</div>
+                    <div class="disc-name">BJJ</div>
+                    <div class="disc-sub">Grappling Academy Mats</div>
+                </div>
+                <div class="disc-hover-bar"></div>
+            </div>
+            <div class="disc-card reveal" style="transition-delay:0.2s">
+                <img loading="lazy" src="Different%20Types%20of%20Safety%20Pole%20Padding.jpg" alt="Taekwondo">
+                <div class="disc-overlay">
+                    <div class="disc-icon">🦵</div>
+                    <div class="disc-name">TAEKWONDO</div>
+                    <div class="disc-sub">WT Standard Flooring</div>
+                </div>
+                <div class="disc-hover-bar"></div>
+            </div>
+            <div class="disc-card reveal" style="transition-delay:0.3s">
+                <img loading="lazy" src="Boxing%20Gym%20Fitouts.jpg" alt="Boxing">
+                <div class="disc-overlay">
+                    <div class="disc-icon">🥊</div>
+                    <div class="disc-name">BOXING</div>
+                    <div class="disc-sub">Ring Canvas & Floor Mats</div>
+                </div>
+                <div class="disc-hover-bar"></div>
+            </div>
+            <div class="disc-card reveal" style="transition-delay:0.4s">
+                <img loading="lazy" src="Black%20Mandala%20Yoga%20Mat%20_%20Minimalist%20Suede%20Non-Slip%20Natural%20Rubber.jpg" alt="Yoga & Meditation">
+                <div class="disc-overlay">
+                    <div class="disc-icon">🧘</div>
+                    <div class="disc-name">YOGA & ZEN</div>
+                    <div class="disc-sub">Soft Dojo Training Mats</div>
+                </div>
+                <div class="disc-hover-bar"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-card reveal">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-num"><span class="count" data-target="10">0</span><span class="stat-suf">+</span></div>
+            <div class="stat-lbl">Years Experience</div>
+        </div>
+        <div class="stat-card reveal">
+            <div class="stat-icon">🥋</div>
+            <div class="stat-num"><span class="count" data-target="300">0</span><span class="stat-suf">+</span></div>
+            <div class="stat-lbl">Dojos Equipped</div>
+        </div>
+        <div class="stat-card reveal">
+            <div class="stat-icon">🌍</div>
+            <div class="stat-num"><span class="count" data-target="8">0</span></div>
+            <div class="stat-lbl">Martial Arts Covered</div>
+        </div>
+        <div class="stat-card reveal">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-num"><span class="count" data-target="100">0</span><span class="stat-suf">%</span></div>
+            <div class="stat-lbl">Client Satisfaction</div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="section-full why-section" id="why-us">
+    <div class="why-inner" style="max-width:1400px;margin:0 auto">
+        <div class="why-visual reveal-left">
+            <div class="why-badge-overlay">
+                <div class="why-badge-num">10+</div>
+                <div class="why-badge-txt">YEARS OF<br>EXCELLENCE</div>
+            </div>
+            <div class="why-img-main">
+                <img src="Different%20Types%20of%20Safety%20Pole%20Padding.jpg" alt="Professional Dojo Installation" loading="lazy">
+            </div>
+            <div class="why-img-float">
+                <img src="de9ij.jpg" alt="Training in action" loading="lazy">
+            </div>
+        </div>
+        <div class="why-content reveal-right">
+            <span class="s-label">Why Mian Sports Flooring</span>
+            <h2 class="s-title">PAKISTAN'S MOST <span>TRUSTED</span> COMBAT MAT EXPERTS</h2>
+            <p class="s-desc">We don't just sell mats — we engineer safe, high-performance training environments that have protected thousands of athletes across Pakistan for over a decade.</p>
+            <ul class="why-list">
+                <li>
+                    <div class="why-list-icon">🏅</div>
+                    <div>
+                        <div class="why-list-title">International Certifications</div>
+                        <div class="why-list-desc">All mats carry IJF, WKF, UWW, and WT certifications — approved for national and international competition use.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="why-list-icon">🔬</div>
+                    <div>
+                        <div class="why-list-title">Impact-Tested Materials</div>
+                        <div class="why-list-desc">Our EVA foam cores undergo rigorous laboratory impact and compression testing to ensure optimal shock absorption every session.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="why-list-icon">🛠️</div>
+                    <div>
+                        <div class="why-list-title">Expert Installation Team</div>
+                        <div class="why-list-desc">Our certified technicians handle full installation, precise layout, edge finishing, and post-install quality checks — nationwide.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="why-list-icon">🎨</div>
+                    <div>
+                        <div class="why-list-title">Custom Branding & Colors</div>
+                        <div class="why-list-desc">Print your dojo logo, championship markings, or national flag directly onto the mat surface with UV-resistant, fade-proof inks.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="why-list-icon">🛡️</div>
+                    <div>
+                        <div class="why-list-title">5-Year Product Warranty</div>
+                        <div class="why-list-desc">Every mat installation is backed by our comprehensive 5-year structural warranty and dedicated after-sales support team.</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- SPECIFICATIONS -->
+<section class="section-full specs-section" id="specs">
+    <div class="specs-inner">
+        <div class="s-header-center reveal" style="text-align:center;margin-bottom:2rem">
+            <span class="s-label">Technical Data</span>
+            <h2 class="s-title">DETAILED <span>SPECIFICATIONS</span></h2>
+            <p class="s-desc" style="margin:0 auto">Professional-grade technical sheets for each mat category — because champions demand precision.</p>
+        </div>
+        <div class="specs-tabs">
+            <button class="spec-tab active" onclick="switchTab('tatami')">Tatami / Judo</button>
+            <button class="spec-tab" onclick="switchTab('mma')">MMA Mats</button>
+            <button class="spec-tab" onclick="switchTab('karate')">Karate / TKD</button>
+            <button class="spec-tab" onclick="switchTab('wrestling')">Wrestling</button>
+        </div>
+        <div id="tab-tatami" class="spec-panel active">
+            <table class="specs-table">
+                <thead><tr><th>Specification</th><th>Value</th><th>Standard</th></tr></thead>
+                <tbody>
+                    <tr><td>Thickness</td><td>40mm / 50mm</td><td><span class="spec-badge green">IJF Approved</span></td></tr>
+                    <tr><td>Size</td><td>1m × 1m / 1m × 2m</td><td><span class="spec-badge green">Standard</span></td></tr>
+                    <tr><td>Core Material</td><td>High-Density EVA Foam</td><td><span class="spec-badge gold">Premium</span></td></tr>
+                    <tr><td>Surface</td><td>Bi-Color Tatami Texture PVC</td><td><span class="spec-badge green">Competition Grade</span></td></tr>
+                    <tr><td>Base</td><td>Anti-Slip Ribbed PVC Bottom</td><td><span class="spec-badge green">Safety Certified</span></td></tr>
+                    <tr><td>Weight (per m²)</td><td>4.5 – 6.0 kg/m²</td><td><span class="spec-badge green">Within IJF Limits</span></td></tr>
+                    <tr><td>Foam Density</td><td>80 – 100 kg/m³</td><td><span class="spec-badge gold">High Density</span></td></tr>
+                    <tr><td>Color Options</td><td>Green/Yellow, Blue/Red, Custom</td><td><span class="spec-badge green">Available</span></td></tr>
+                    <tr><td>Water Resistance</td><td>Fully Waterproof</td><td><span class="spec-badge green">✓ Certified</span></td></tr>
+                    <tr><td>Warranty</td><td>5 Years Structural</td><td><span class="spec-badge gold">Mian Guarantee</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tab-mma" class="spec-panel">
+            <table class="specs-table">
+                <thead><tr><th>Specification</th><th>Value</th><th>Standard</th></tr></thead>
+                <tbody>
+                    <tr><td>Thickness</td><td>38mm (1.5") / 50mm (2")</td><td><span class="spec-badge green">MMA Pro Grade</span></td></tr>
+                    <tr><td>Format</td><td>Modular Tiles / Roll Mats</td><td><span class="spec-badge green">Flexible</span></td></tr>
+                    <tr><td>Core Material</td><td>Cross-Linked Polyethylene Foam</td><td><span class="spec-badge gold">Premium</span></td></tr>
+                    <tr><td>Cover Material</td><td>Heavy-Duty Vinyl (18oz)</td><td><span class="spec-badge green">Tear Resistant</span></td></tr>
+                    <tr><td>Seaming</td><td>Double-Stitched Velcro</td><td><span class="spec-badge green">Industrial Grade</span></td></tr>
+                    <tr><td>Custom Print</td><td>UV-Print Sublimation Available</td><td><span class="spec-badge gold">Full Branding</span></td></tr>
+                    <tr><td>Impact Absorption</td><td>DIN 18032-2 Compliant</td><td><span class="spec-badge green">Safety Tested</span></td></tr>
+                    <tr><td>Octagon / Cage Floor</td><td>Custom Shapes Available</td><td><span class="spec-badge gold">✓ On Request</span></td></tr>
+                    <tr><td>Slip Resistance</td><td>R10 Rating</td><td><span class="spec-badge green">✓ Certified</span></td></tr>
+                    <tr><td>Warranty</td><td>5 Years Structural</td><td><span class="spec-badge gold">Mian Guarantee</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tab-karate" class="spec-panel">
+            <table class="specs-table">
+                <thead><tr><th>Specification</th><th>Value</th><th>Standard</th></tr></thead>
+                <tbody>
+                    <tr><td>Thickness</td><td>20mm / 25mm</td><td><span class="spec-badge green">WKF / WT Approved</span></td></tr>
+                    <tr><td>Size</td><td>1m × 1m Interlocking Tiles</td><td><span class="spec-badge green">Standard</span></td></tr>
+                    <tr><td>Material</td><td>Non-Toxic EVA Foam</td><td><span class="spec-badge gold">Child Safe</span></td></tr>
+                    <tr><td>Surface Texture</td><td>Fine Tatami (Bare-Foot Grip)</td><td><span class="spec-badge green">Optimal Traction</span></td></tr>
+                    <tr><td>Edge Tiles</td><td>Beveled Safety Borders Included</td><td><span class="spec-badge green">Included</span></td></tr>
+                    <tr><td>Color Options</td><td>Red, Blue, Black, Green, Grey</td><td><span class="spec-badge green">8 Colors</span></td></tr>
+                    <tr><td>Competition Area</td><td>8m × 8m to 12m × 12m</td><td><span class="spec-badge green">WKF Compliant</span></td></tr>
+                    <tr><td>Maintenance</td><td>Wipe-Clean, Low Maintenance</td><td><span class="spec-badge gold">Easy Care</span></td></tr>
+                    <tr><td>Weight</td><td>~2.5 kg/m²</td><td><span class="spec-badge green">Lightweight</span></td></tr>
+                    <tr><td>Warranty</td><td>5 Years Structural</td><td><span class="spec-badge gold">Mian Guarantee</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tab-wrestling" class="spec-panel">
+            <table class="specs-table">
+                <thead><tr><th>Specification</th><th>Value</th><th>Standard</th></tr></thead>
+                <tbody>
+                    <tr><td>Thickness</td><td>2" / 2.5" / 3"</td><td><span class="spec-badge green">UWW Certified</span></td></tr>
+                    <tr><td>Format</td><td>Single-Piece / Modular Roll</td><td><span class="spec-badge green">Available</span></td></tr>
+                    <tr><td>Core Material</td><td>HD Closed-Cell Foam</td><td><span class="spec-badge gold">Premium</span></td></tr>
+                    <tr><td>Cover</td><td>Vinyl (16oz Minimum)</td><td><span class="spec-badge green">NFHS / NCAA Grade</span></td></tr>
+                    <tr><td>Circle Markings</td><td>Factory-Painted or Taped</td><td><span class="spec-badge green">UWW Lines</span></td></tr>
+                    <tr><td>Color (Cover)</td><td>Royal Blue, Red, Grey, Custom</td><td><span class="spec-badge green">Available</span></td></tr>
+                    <tr><td>Circle Dimensions</td><td>9m Diameter Combat Area</td><td><span class="spec-badge green">UWW Regulation</span></td></tr>
+                    <tr><td>Roll-Up Option</td><td>Available up to 12m Width</td><td><span class="spec-badge gold">Available</span></td></tr>
+                    <tr><td>Seaming</td><td>RF-Welded or Heat-Sealed</td><td><span class="spec-badge green">Watertight</span></td></tr>
+                    <tr><td>Warranty</td><td>5 Years Structural</td><td><span class="spec-badge gold">Mian Guarantee</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- INSTALLATION PROCESS -->
+<section class="section-full process-section">
+    <div style="max-width:1200px;margin:0 auto">
+        <div class="s-header-center reveal" style="text-align:center;margin-bottom:0">
+            <span class="s-label">From Order to Dojo</span>
+            <h2 class="s-title">OUR <span>INSTALLATION PROCESS</span></h2>
+            <p class="s-desc" style="margin:0 auto">A seamless journey from consultation to your first training session — guaranteed in as little as 7 business days.</p>
+        </div>
+        <div class="process-inner">
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Free Site Consultation & Measurement</div>
+                        <div class="step-desc">Our expert visits your dojo, gym, or club to assess the space, discuss your martial art's requirements, check subfloor conditions, and take precise measurements. Remote consultation also available via WhatsApp or video call.</div>
+                        <div class="step-tags"><span class="step-tag">Free of Charge</span><span class="step-tag">Nationwide</span><span class="step-tag">Same-Day Scheduling</span></div>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Custom Design & Quotation</div>
+                        <div class="step-desc">We prepare a detailed floor plan, mat layout, color scheme options, and full itemized quotation — including delivery, installation, edge trim, and any custom branding you need. No hidden costs.</div>
+                        <div class="step-tags"><span class="step-tag">CAD Layout</span><span class="step-tag">Color Mockups</span><span class="step-tag">Fixed Price Quote</span></div>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Production & Quality Control</div>
+                        <div class="step-desc">Mats are manufactured to your exact specifications. Every batch undergoes impact testing, foam density verification, and surface inspection. Custom prints are test-printed before full production run.</div>
+                        <div class="step-tags"><span class="step-tag">Lab Tested</span><span class="step-tag">ISO Process</span><span class="step-tag">QC Report Provided</span></div>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Professional Installation</div>
+                        <div class="step-desc">Our certified installation crew arrives on schedule, prepares the subfloor, lays the mats with precision, finishes edges, installs borders, and confirms alignment to your approved floor plan. Typically completed in 1–2 days.</div>
+                        <div class="step-tags"><span class="step-tag">Certified Crew</span><span class="step-tag">Minimal Disruption</span><span class="step-tag">Clean Site Guarantee</span></div>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <div class="step-title">Handover, Training & Warranty</div>
+                        <div class="step-desc">We walk you through proper mat care, cleaning protocols, and storage if needed. You receive our 5-year warranty certificate and direct access to our after-sales WhatsApp support line — open 6 days a week.</div>
+                        <div class="step-tags"><span class="step-tag">5-Year Warranty</span><span class="step-tag">Care Guide</span><span class="step-tag">24/7 Support</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+    <div class="gallery-header reveal">
+        <span class="s-label">Our Projects</span>
+        <h2 class="s-title" style="text-align:center">INSTALLED <span>ACROSS PAKISTAN</span></h2>
+        <p class="s-desc" style="text-align:center;margin:0 auto">300+ successful installations — from club dojos to national training centers.</p>
+    </div>
+    <div class="gallery-track-wrapper">
+        <div class="gallery-strip">
+            <div class="gallery-img"><img loading="lazy" src="download%20(80800).jpg" alt="Judo Tatami"><div class="gallery-img-label">Olympic Tatami – Lahore</div></div>
+            <div class="gallery-img"><img loading="lazy" src="MMA%20Cage%20-%205m%20Fold%20Away.jpg" alt="MMA Cage"><div class="gallery-img-label">MMA Cage Floor – Karachi</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Judo.jpg" alt="Karate Dojo"><div class="gallery-img-label">Karate Dojo – Islamabad</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Resilite%20Wrestling%20Mats%20Gallery.jpg" alt="Wrestling Mat"><div class="gallery-img-label">Wrestling Hall – Peshawar</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Grappling%20MMA%20Mats%201-1_2%20Inch%20x%201x1%20Meter.jpg" alt="BJJ Academy"><div class="gallery-img-label">BJJ Academy – Lahore</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Different%20Types%20of%20Safety%20Pole%20Padding.jpg" alt="Taekwondo Hall"><div class="gallery-img-label">Taekwondo Hall – Multan</div></div>
+            <!-- Duplicates for seamless loop -->
+            <div class="gallery-img"><img loading="lazy" src="download%20(80800).jpg" alt="Judo Tatami"><div class="gallery-img-label">Olympic Tatami – Lahore</div></div>
+            <div class="gallery-img"><img loading="lazy" src="MMA%20Cage%20-%205m%20Fold%20Away.jpg" alt="MMA Cage"><div class="gallery-img-label">MMA Cage Floor – Karachi</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Judo.jpg" alt="Karate Dojo"><div class="gallery-img-label">Karate Dojo – Islamabad</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Resilite%20Wrestling%20Mats%20Gallery.jpg" alt="Wrestling Mat"><div class="gallery-img-label">Wrestling Hall – Peshawar</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Grappling%20MMA%20Mats%201-1_2%20Inch%20x%201x1%20Meter.jpg" alt="BJJ Academy"><div class="gallery-img-label">BJJ Academy – Lahore</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Different%20Types%20of%20Safety%20Pole%20Padding.jpg" alt="Taekwondo Hall"><div class="gallery-img-label">Taekwondo Hall – Multan</div></div>
+        </div>
+        <div class="gallery-strip reverse">
+            <div class="gallery-img"><img loading="lazy" src="Boxing%20Gym%20Fitouts.jpg" alt="Boxing Gym"><div class="gallery-img-label">Boxing Gym – Rawalpindi</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Yoga%20day%20_%20WELLNESS.jpg" alt="Yoga Studio"><div class="gallery-img-label">Yoga & Wellness – Lahore</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Cardio%20Boxing.jpg" alt="Kickboxing"><div class="gallery-img-label">Kickboxing Club – Faisalabad</div></div>
+            <div class="gallery-img"><img loading="lazy" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70" alt="Fitness Center"><div class="gallery-img-label">Fitness Center – Gujranwala</div></div>
+            <div class="gallery-img"><img loading="lazy" src="juelso.jpg" alt="Sports Hall"><div class="gallery-img-label">National Sports Hall – Lahore</div></div>
+            <div class="gallery-img"><img loading="lazy" src="loyomi.jpg" alt="Championship Arena"><div class="gallery-img-label">Championship Arena – Karachi</div></div>
+            <!-- Duplicates -->
+            <div class="gallery-img"><img loading="lazy" src="Boxing%20Gym%20Fitouts.jpg" alt="Boxing Gym"><div class="gallery-img-label">Boxing Gym – Rawalpindi</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Yoga%20day%20_%20WELLNESS.jpg" alt="Yoga Studio"><div class="gallery-img-label">Yoga & Wellness – Lahore</div></div>
+            <div class="gallery-img"><img loading="lazy" src="Cardio%20Boxing.jpg" alt="Kickboxing"><div class="gallery-img-label">Kickboxing Club – Faisalabad</div></div>
+            <div class="gallery-img"><img loading="lazy" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70" alt="Fitness Center"><div class="gallery-img-label">Fitness Center – Gujranwala</div></div>
+            <div class="gallery-img"><img loading="lazy" src="juelso.jpg" alt="Sports Hall"><div class="gallery-img-label">National Sports Hall – Lahore</div></div>
+            <div class="gallery-img"><img loading="lazy" src="loyomi.jpg" alt="Championship Arena"><div class="gallery-img-label">Championship Arena – Karachi</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-section">
+    <div class="certs-inner">
+        <div class="s-header-center reveal" style="text-align:center">
+            <span class="s-label">Globally Recognized</span>
+            <h2 class="s-title">CERTIFICATIONS & <span>STANDARDS</span></h2>
+        </div>
+        <div class="certs-grid">
+            <div class="cert-badge reveal">
+                <div class="cert-icon">🏅</div>
+                <div class="cert-name">IJF</div>
+                <div class="cert-body">International Judo Federation Approved</div>
+            </div>
+            <div class="cert-badge reveal">
+                <div class="cert-icon">⭐</div>
+                <div class="cert-name">WKF</div>
+                <div class="cert-body">World Karate Federation Standard</div>
+            </div>
+            <div class="cert-badge reveal">
+                <div class="cert-icon">🏆</div>
+                <div class="cert-name">UWW</div>
+                <div class="cert-body">United World Wrestling Certified</div>
+            </div>
+            <div class="cert-badge reveal">
+                <div class="cert-icon">🦵</div>
+                <div class="cert-name">WT</div>
+                <div class="cert-body">World Taekwondo Compliant</div>
+            </div>
+            <div class="cert-badge reveal">
+                <div class="cert-icon">🔬</div>
+                <div class="cert-name">ISO 9001</div>
+                <div class="cert-body">Quality Management System</div>
+            </div>
+            <div class="cert-badge reveal">
+                <div class="cert-icon">🛡️</div>
+                <div class="cert-name">DIN EN</div>
+                <div class="cert-body">European Safety Standard 13501</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-full testi-section" id="testimonials">
+    <div style="max-width:1400px;margin:0 auto">
+        <div class="s-header-center reveal" style="text-align:center">
+            <span class="s-label">What Champions Say</span>
+            <h2 class="s-title">TRUSTED BY <span>CHAMPIONS</span></h2>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">We outfitted our national judo training center with Mian's tatami mats three years ago. The IJF certification, quality, and service were absolutely outstanding. Our athletes trust this surface with their safety every day.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">SK</div>
+                    <div>
+                        <div class="testi-name">Sensei Khalid Rehman</div>
+                        <div class="testi-role">Head Coach, Pakistan Judo Federation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">We needed a full MMA cage floor with custom branding for our gym's launch event. Mian Sports delivered in record time — the print quality, mat grip, and installation were exactly what we needed. Highly recommend.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">AR</div>
+                    <div>
+                        <div class="testi-name">Ahmed Raza</div>
+                        <div class="testi-role">Owner, Predator MMA Academy, Karachi</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">From the first consultation to final installation, the team was professional, punctual, and detail-oriented. The karate mats are WKF compliant and our students love training on them. Best investment for our dojo.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">FH</div>
+                    <div>
+                        <div class="testi-name">Fatima Hasan</div>
+                        <div class="testi-role">Head Instructor, Islamabad Karate Club</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-inner reveal">
+        <span class="cta-icon">🥋</span>
+        <h2 class="cta-title">READY TO ELEVATE YOUR <span>DOJO?</span></h2>
+        <p class="cta-desc">Get a free site assessment and custom mat quotation from Pakistan's most experienced combat sports flooring team. No obligation — just expert advice.</p>
+        <div class="cta-btns">
+            <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">🏆 Get Free Quote</button>
+            <button class="btn-o" onclick="window.location.href='sports-whatsapp.html'">💬 WhatsApp Us Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-full contact-section" id="contact">
+    <div class="contact-inner" style="max-width:1200px;margin:0 auto">
+        <div class="reveal-left">
+            <span class="s-label">Get In Touch</span>
+            <h2 class="contact-info-title">LET'S BUILD YOUR PERFECT DOJO</h2>
+            <p class="contact-info-desc">Whether you're setting up a school dojo, a professional MMA gym, or a national training facility — our team is ready with a solution tailored to your discipline and budget.</p>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <div>
+                        <div class="contact-item-text">Head Office</div>
+                        <div class="contact-item-sub">123 Sports Avenue, Lahore, Pakistan</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <div>
+                        <div class="contact-item-text">Call / WhatsApp</div>
+                        <div class="contact-item-sub">+92 300 123 4567</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📧</div>
+                    <div>
+                        <div class="contact-item-text">Email</div>
+                        <div class="contact-item-sub">martial@miansportsflooring.pk</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🕐</div>
+                    <div>
+                        <div class="contact-item-text">Business Hours</div>
+                        <div class="contact-item-sub">Mon – Sat: 9:00 AM – 7:00 PM</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🌍</div>
+                    <div>
+                        <div class="contact-item-text">Serving All Cities</div>
+                        <div class="contact-item-sub">Lahore • Karachi • Islamabad • Peshawar • Multan & Beyond</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reveal-right">
+            <div class="contact-form">
+                <div class="form-title">Request a Free Quote</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Sensei / Coach / Owner Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone / WhatsApp</label>
+                        <input type="text" placeholder="+92 300 000 0000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Facility / Club Name</label>
+                    <input type="text" placeholder="Your Dojo / Academy Name">
+                </div>
+                <div class="form-group">
+                    <label>Martial Art / Discipline</label>
+                    <select>
+                        <option value="">Select Your Discipline...</option>
+                        <option>Judo</option>
+                        <option>MMA / Mixed Martial Arts</option>
+                        <option>Karate</option>
+                        <option>Brazilian Jiu-Jitsu (BJJ)</option>
+                        <option>Wrestling</option>
+                        <option>Taekwondo</option>
+                        <option>Boxing</option>
+                        <option>Kickboxing / Muay Thai</option>
+                        <option>Gymnastics / Acrobatics</option>
+                        <option>Multi-Discipline / Mixed Use</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Approximate Area (m²)</label>
+                        <input type="text" placeholder="e.g., 120 m²">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" placeholder="Lahore, Karachi...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Additional Requirements</label>
+                    <textarea placeholder="Custom colors, branding, competition lines, urgency, budget range..."></textarea>
+                </div>
+                <button class="form-submit" onclick="this.textContent='✅ Sent! We\'ll contact you within 2 hours.'; this.style.background='linear-gradient(135deg, #16a34a, #22c55e)';">SEND MY REQUEST 🥋</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <span class="footer-brand-icon">🥋</span>
+            <div class="footer-brand-name">MIAN SPORTS FLOORING</div>
+            <p class="footer-brand-desc">Pakistan's leading provider of martial arts and combat mat solutions. 10+ years of excellence, 300+ dojos equipped, and a commitment to warrior safety that never wavers.</p>
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank" class="footer-soc">f</a>
+                <a href="https://instagram.com" target="_blank" class="footer-soc">📷</a>
+                <a href="https://linkedin.com" target="_blank" class="footer-soc">in</a>
+                <a href="https://youtube.com" target="_blank" class="footer-soc">▶</a>
+                <a href="sports-whatsapp.html" target="_blank" class="footer-soc">💬</a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Mat Products</h4>
+            <ul>
+                <li><a href="#products">▸ Olympic Tatami Mats</a></li>
+                <li><a href="#products">▸ Professional MMA Mats</a></li>
+                <li><a href="#products">▸ Karate Puzzle Mats</a></li>
+                <li><a href="#products">▸ Wrestling Competition Mats</a></li>
+                <li><a href="#products">▸ BJJ Grappling Mats</a></li>
+                <li><a href="#products">▸ Crash & Landing Mats</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#why-us">▸ About Us</a></li>
+                <li><a href="#gallery">▸ Our Projects</a></li>
+                <li><a href="#specs">▸ Certifications</a></li>
+                <li><a href="index.html">▸ Blog & Guides</a></li>
+                <li><a href="index.html">▸ Careers</a></li>
+                <li><a href="#contact">▸ Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <div class="footer-contact-item"><span class="contact-icon">📍</span><span>123 Sports Avenue, Lahore, Pakistan</span></div>
+            <div class="footer-contact-item"><span class="contact-icon">📞</span><span>+92 300 123 4567</span></div>
+            <div class="footer-contact-item"><span class="contact-icon">📧</span><span>martial@miansportsflooring.pk</span></div>
+            <div class="footer-contact-item"><span class="contact-icon">🕐</span><span>Mon–Sat: 9:00 AM – 7:00 PM</span></div>
+            <div class="footer-contact-item"><span class="contact-icon">🌐</span><span>www.miansportsflooring.pk</span></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© <span class="footer-year"></span> <span>Mian Sports Flooring</span>. All Rights Reserved.</span>
+        <span>Forged with ❤️ for the warriors of <span>Pakistan</span></span>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+<script src="assets/js/main.js" defer></script>
+<script>
+    // PRELOADER
+    window.addEventListener('load', () => {
+        setTimeout(() => document.getElementById('preloader').classList.add('gone'), 1800);
+    });
+
+    // CUSTOM CURSOR
+    const cur = document.getElementById('cursor');
+    const dot = document.getElementById('cursor-dot');
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+        setTimeout(() => {
+            cur.style.left = mouseX + 'px';
+            cur.style.top = mouseY + 'px';
+        }, 80);
+    });
+    document.querySelectorAll('a,button,.prod-card,.testi-card,.gallery-img,.disc-card,.cert-badge').forEach(el => {
+        el.addEventListener('mouseenter', () => cur.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => cur.classList.remove('hovered'));
+    });
+
+    // PARTICLES
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 55; i++) {
+        const p = document.createElement('span');
+        p.style.cssText = `left:${Math.random()*100}%;width:${Math.random()*4+2}px;height:${Math.random()*4+2}px;animation-duration:${Math.random()*10+8}s;animation-delay:${Math.random()*12}s;`;
+        container.appendChild(p);
+    }
+
+    // NAV SCROLL
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        nav.style.boxShadow = window.scrollY > 80 ? '0 4px 30px rgba(57,255,20,0.15)' : 'none';
+        document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // INTERSECTION OBSERVER
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('shown'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
+
+    // COUNTER
+    const countObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                const el = e.target;
+                const target = parseInt(el.dataset.target);
+                let current = 0;
+                const step = Math.ceil(target / 60);
+                const timer = setInterval(() => {
+                    current = Math.min(current + step, target);
+                    el.textContent = current;
+                    if (current >= target) clearInterval(timer);
+                }, 28);
+                countObs.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.count').forEach(el => countObs.observe(el));
+
+    // SMOOTH SCROLL
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+
+    // RIPPLE on buttons
+    document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            Object.assign(ripple.style, {
+                position:'absolute', borderRadius:'50%',
+                width:'0', height:'0',
+                background:'rgba(255,255,255,0.25)',
+                left: (e.clientX - rect.left) + 'px',
+                top: (e.clientY - rect.top) + 'px',
+                transform:'translate(-50%,-50%)',
+                animation:'rippleAnim 0.6s ease-out forwards',
+                pointerEvents:'none'
+            });
+            if (getComputedStyle(this).position === 'static') this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 700);
+        });
+    });
+    const rStyle = document.createElement('style');
+    rStyle.textContent = `@keyframes rippleAnim { to { width:300px; height:300px; opacity:0; } }`;
+    document.head.appendChild(rStyle);
+
+    // SPEC TABS
+    function switchTab(name) {
+        document.querySelectorAll('.spec-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.spec-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + name).classList.add('active');
+        event.target.classList.add('active');
+    }
+
+    // PARALLAX on hero bg
+    window.addEventListener('scroll', () => {
+        const hero = document.querySelector('.hero-bg');
+        if (hero) hero.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+    });
+
+    console.log('%c🥋 MIAN SPORTS FLOORING — Martial Arts & Combat Mats', 'color:#39FF14;font-size:14px;font-weight:bold;background:#050a05;padding:8px 16px;border-radius:6px;');
+</script>
+</body>
+</html>

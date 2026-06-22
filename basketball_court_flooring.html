@@ -1,0 +1,3322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Court Flooring Pakistan | Mian Sports Flooring</title>
+    <meta name="description"
+        content="Premium basketball court flooring in Pakistan. NBA-grade hardwood, synthetic PU, rubber & modular court surfaces. Best basketball flooring supplier in Lahore, Karachi, Islamabad. Free quote.">
+    <meta name="keywords"
+        content="basketball court flooring Pakistan, basketball flooring Lahore, NBA grade basketball floor, hardwood basketball court, synthetic basketball court Pakistan, indoor basketball flooring, outdoor basketball court surface, FIBA basketball court, maple hardwood basketball floor, rubber basketball flooring, modular basketball tiles, basketball court installation Pakistan, basketball court marking, court flooring price Pakistan">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rajdhani:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green-bright: #39FF14;
+            --green-mid: #22c55e;
+            --green-dark: #16a34a;
+            --green-deep: #0d5c2e;
+            --black: #050a05;
+            --dark: #0b1a0f;
+            --dark2: #112318;
+            --charcoal: #1a2e1f;
+            --white: #f0fff4;
+            --silver: #a8c5b0;
+            --orange: #f97316;
+            --red: #ef4444;
+            --gold: #fbbf24;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            cursor: none;
+        }
+
+        /* CURSOR */
+        #cursor {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--green-bright);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transition: transform 0.12s ease;
+            mix-blend-mode: difference;
+        }
+
+        #cursor.hovered {
+            transform: scale(2.5);
+            border-color: var(--orange);
+        }
+
+        /* PRELOADER */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--black);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99998;
+            transition: opacity 0.8s, visibility 0.8s;
+        }
+
+        #preloader.gone {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .pre-rings {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pre-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            animation: preRing linear infinite;
+        }
+
+        .pre-ring:nth-child(1) {
+            width: 130px;
+            height: 130px;
+            animation-duration: 3s;
+        }
+
+        .pre-ring:nth-child(2) {
+            width: 95px;
+            height: 95px;
+            animation-duration: 2s;
+            animation-direction: reverse;
+            border-color: rgba(57, 255, 20, 0.6);
+        }
+
+        .pre-ring:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            animation-duration: 1.5s;
+            border-color: rgba(57, 255, 20, 0.9);
+        }
+
+        @keyframes preRing {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pre-icon {
+            font-size: 2.2rem;
+            position: relative;
+            z-index: 2;
+            animation: preSpinScale 1.5s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 20px #39FF14);
+        }
+
+        @keyframes preSpinScale {
+            0% {
+                transform: scale(0.9);
+                filter: drop-shadow(0 0 10px #39FF14);
+            }
+
+            100% {
+                transform: scale(1.15);
+                filter: drop-shadow(0 0 40px #39FF14);
+            }
+        }
+
+        .pre-text {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.5rem;
+            color: var(--green-bright);
+            letter-spacing: 4px;
+            margin-top: 1.5rem;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 0.8rem 5%;
+            background: rgba(5, 10, 5, 0.97);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 2px solid rgba(57, 255, 20, 0.25);
+            animation: navDrop 0.8s ease-out;
+        }
+
+        @keyframes navDrop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 12px rgba(57, 255, 20, 0.7));
+            transition: filter 0.3s;
+        }
+
+        .nav-brand:hover .nav-logo-img {
+            filter: drop-shadow(0 0 25px rgba(57, 255, 20, 1));
+        }
+
+        .nav-logo-fallback {
+            height: 54px;
+            width: 54px;
+            background: linear-gradient(135deg, var(--green-deep), var(--green-dark));
+            border: 2px solid var(--green-bright);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Russo One', sans-serif;
+            font-size: 0.95rem;
+            color: var(--green-bright);
+            filter: drop-shadow(0 0 12px rgba(57, 255, 20, 0.7));
+            transition: filter 0.3s;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover .nav-logo-fallback {
+            filter: drop-shadow(0 0 25px rgba(57, 255, 20, 1));
+        }
+
+        .nav-brand-text {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.25rem;
+            color: var(--white);
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .nav-brand-text span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--green-bright);
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--silver);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--green-bright);
+            transition: width 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--green-bright);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.65rem 1.8rem;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.8);
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-bar {
+            margin-top: 80px;
+            background: rgba(13, 92, 46, 0.15);
+            border-bottom: 1px solid rgba(57, 255, 20, 0.12);
+            padding: 0.7rem 5%;
+        }
+
+        .breadcrumb-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.9rem;
+            color: var(--silver);
+        }
+
+        .breadcrumb-inner a {
+            color: var(--green-mid);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb-inner a:hover {
+            color: var(--green-bright);
+        }
+
+        .breadcrumb-inner .sep {
+            color: rgba(57, 255, 20, 0.35);
+        }
+
+        .breadcrumb-inner .current {
+            color: var(--green-bright);
+            font-weight: 600;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(5, 10, 5, 0.92) 0%, rgba(13, 92, 46, 0.5) 50%, rgba(5, 10, 5, 0.95) 100%), url('https://images.unsplash.com/photo-1546519638405-a2a00b5d97e9?w=1800&q=85') center/cover no-repeat;
+        }
+
+        .hero-lines {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(57, 255, 20, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(57, 255, 20, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .hero-particles span {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--green-bright);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-20px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .hero-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 8rem 5% 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 1.2rem;
+            border: 1px solid var(--green-bright);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--green-bright);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeUp 1s ease 0.3s both;
+        }
+
+        .hero-badge::before {
+            content: '●';
+            font-size: 0.6rem;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
+        }
+
+        .hero-h1 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 4.2rem;
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 1s ease 0.5s both;
+        }
+
+        .hero-h1 .line1 {
+            color: var(--white);
+            display: block;
+        }
+
+        .hero-h1 .line2 {
+            display: block;
+            background: linear-gradient(90deg, var(--green-bright), var(--gold), var(--green-mid));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-h1 .line3 {
+            color: var(--white);
+            display: block;
+        }
+
+        .hero-p {
+            font-size: 1.25rem;
+            color: var(--silver);
+            max-width: 540px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            animation: fadeUp 1s ease 0.7s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2.5rem;
+            animation: fadeUp 1s ease 0.75s both;
+        }
+
+        .hero-tag {
+            padding: 0.3rem 0.9rem;
+            background: rgba(57, 255, 20, 0.07);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: var(--green-mid);
+            letter-spacing: 1px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease 0.9s both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* BUTTONS */
+        .btn-g {
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 5px 25px rgba(57, 255, 20, 0.4);
+        }
+
+        .btn-g:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(57, 255, 20, 0.7);
+        }
+
+        .btn-o {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--orange);
+            border-radius: 8px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        .btn-o:hover {
+            background: var(--orange);
+            color: var(--black);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.5);
+        }
+
+        .btn-outline {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--green-bright);
+            border: 2px solid var(--green-bright);
+            border-radius: 8px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        .btn-outline:hover {
+            background: var(--green-bright);
+            color: var(--black);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.4);
+        }
+
+        .btn-sm {
+            padding: 0.75rem 1.6rem !important;
+            font-size: 0.95rem !important;
+        }
+
+        /* HERO VISUAL */
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeUp 1s ease 0.4s both;
+        }
+
+        .logo-showcase {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(57, 255, 20, 0.2);
+            animation: spinRing linear infinite;
+        }
+
+        .logo-ring:nth-child(1) {
+            width: 340px;
+            height: 340px;
+            animation-duration: 12s;
+        }
+
+        .logo-ring:nth-child(2) {
+            width: 420px;
+            height: 420px;
+            animation-duration: 20s;
+            animation-direction: reverse;
+            border-color: rgba(249, 115, 22, 0.15);
+        }
+
+        .logo-ring:nth-child(3) {
+            width: 500px;
+            height: 500px;
+            animation-duration: 30s;
+            border-color: rgba(251, 191, 36, 0.1);
+        }
+
+        @keyframes spinRing {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .court-glow-img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            border: 3px solid var(--green-bright);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.8), 0 0 60px rgba(57, 255, 20, 0.4);
+            animation: logoFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
+            }
+
+            50% {
+                transform: translateY(-18px) scale(1.03);
+                box-shadow: 0 0 60px rgba(57, 255, 20, 1);
+            }
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--silver);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        .hero-scroll::after {
+            content: '▼';
+            color: var(--green-bright);
+            font-size: 1rem;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* MARQUEE */
+        .marquee-bar {
+            background: var(--green-dark);
+            padding: 0.8rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid var(--green-bright);
+            border-bottom: 1px solid var(--green-bright);
+        }
+
+        .marquee-track {
+            display: inline-block;
+            animation: marqueeScroll 25s linear infinite;
+        }
+
+        .marquee-track span {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--black);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 3rem;
+        }
+
+        .marquee-track span::before {
+            content: '⚡ ';
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* SECTION COMMONS */
+        .section {
+            padding: 6rem 5%;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .section-full {
+            padding: 6rem 5%;
+        }
+
+        .s-label {
+            font-size: 0.9rem;
+            color: var(--green-bright);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .s-title {
+            font-family: 'Russo One', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+
+        .s-title span {
+            color: var(--green-bright);
+        }
+
+        .s-desc {
+            font-size: 1.2rem;
+            color: var(--silver);
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.shown {
+            opacity: 1;
+            transform: none;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.shown {
+            opacity: 1;
+            transform: none;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.shown {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* PRODUCTS GRID */
+        .products-section {
+            background: var(--dark);
+        }
+
+        .prod-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .prod-header .s-desc {
+            margin: 0 auto;
+        }
+
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .prod-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: var(--dark2);
+            border: 1px solid rgba(57, 255, 20, 0.12);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .prod-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--green-bright);
+            box-shadow: 0 20px 60px rgba(57, 255, 20, 0.25);
+        }
+
+        .prod-img-wrap {
+            position: relative;
+            overflow: hidden;
+            height: 240px;
+        }
+
+        .prod-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .prod-card:hover .prod-img-wrap img {
+            transform: scale(1.1);
+        }
+
+        .prod-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(16, 163, 74, 0.3) 0%, rgba(5, 10, 5, 0.85) 60%);
+        }
+
+        .prod-card[data-color="orange"] .prod-img-overlay {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.3) 0%, rgba(5, 10, 5, 0.85) 60%);
+        }
+
+        .prod-card[data-color="gold"] .prod-img-overlay {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.3) 0%, rgba(5, 10, 5, 0.85) 60%);
+        }
+
+        .prod-card[data-color="red"] .prod-img-overlay {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.3) 0%, rgba(5, 10, 5, 0.85) 60%);
+        }
+
+        .prod-card[data-color="blue"] .prod-img-overlay {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(5, 10, 5, 0.85) 60%);
+        }
+
+        .prod-img-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.3rem 0.9rem;
+            background: var(--green-dark);
+            border: 1px solid var(--green-bright);
+            border-radius: 50px;
+            font-size: 0.78rem;
+            color: var(--green-bright);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .prod-body {
+            padding: 1.8rem;
+        }
+
+        .prod-cat {
+            font-size: 0.8rem;
+            color: var(--green-bright);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .prod-name {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .prod-desc {
+            color: var(--silver);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .prod-features {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prod-features li {
+            padding: 0.2rem 0.8rem;
+            background: rgba(57, 255, 20, 0.08);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: var(--green-mid);
+            letter-spacing: 0.5px;
+        }
+
+        .prod-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.95rem;
+            color: var(--silver);
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .prod-price strong {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .prod-btn {
+            display: block;
+            width: 100%;
+            padding: 0.9rem;
+            background: linear-gradient(135deg, var(--green-deep), var(--green-dark));
+            color: var(--white);
+            border: 1px solid var(--green-mid);
+            border-radius: 10px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .prod-btn:hover {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black);
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.4);
+        }
+
+        /* STATS */
+        .stats-section {
+            background: var(--green-deep);
+            padding: 5rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: 'BASKETBALL';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Russo One', sans-serif;
+            font-size: 13vw;
+            color: rgba(255, 255, 255, 0.04);
+            text-transform: uppercase;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .stat-num {
+            font-family: 'Russo One', sans-serif;
+            font-size: 3.8rem;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .stat-suf {
+            color: var(--green-bright);
+        }
+
+        .stat-lbl {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+
+        /* GALLERY */
+        .gallery-section {
+            padding: 5rem 0;
+            background: var(--dark);
+            overflow: hidden;
+        }
+
+        .gallery-header {
+            text-align: center;
+            padding: 0 5%;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-header .s-desc {
+            margin: 0 auto;
+        }
+
+        .gallery-strip {
+            display: flex;
+            gap: 1.5rem;
+            animation: galleryScroll 30s linear infinite;
+            width: max-content;
+        }
+
+        .gallery-strip:hover {
+            animation-play-state: paused;
+        }
+
+        .gallery-strip-2 {
+            animation-direction: reverse;
+            animation-duration: 38s;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-img {
+            width: 300px;
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid rgba(57, 255, 20, 0.15);
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .gallery-img:hover {
+            border-color: var(--green-bright);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(57, 255, 20, 0.4);
+        }
+
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-img-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(transparent, rgba(5, 10, 5, 0.9));
+            font-size: 0.85rem;
+            color: var(--green-bright);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        @keyframes galleryScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* WHY US */
+        .why-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+        }
+
+        .why-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .why-visual {
+            position: relative;
+        }
+
+        .why-img-main {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(57, 255, 20, 0.3);
+        }
+
+        .why-img-main img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            filter: saturate(1.3) contrast(1.1);
+        }
+
+        .why-img-float {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid var(--green-bright);
+            box-shadow: 0 10px 40px rgba(57, 255, 20, 0.4);
+            animation: floatBadge 4s ease-in-out infinite;
+        }
+
+        .why-img-float img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .why-img-float-2 {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 180px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);
+            animation: floatBadge 4s ease-in-out infinite reverse;
+            z-index: 2;
+        }
+
+        .why-img-float-2 img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        @keyframes floatBadge {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .why-badge-overlay {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            background: var(--green-dark);
+            border: 2px solid var(--green-bright);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
+        }
+
+        .why-badge-num {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2.5rem;
+            color: var(--green-bright);
+            line-height: 1;
+        }
+
+        .why-badge-txt {
+            font-size: 0.75rem;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .why-list {
+            list-style: none;
+            margin-top: 2.5rem;
+        }
+
+        .why-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(57, 255, 20, 0.1);
+            transition: padding-left 0.3s;
+        }
+
+        .why-list li:hover {
+            padding-left: 0.5rem;
+        }
+
+        .why-list-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .why-list-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .why-list-desc {
+            font-size: 1rem;
+            color: var(--silver);
+            margin-top: 0.2rem;
+        }
+
+        /* SPECS TABS */
+        .specs-section {
+            background: var(--dark2);
+            padding: 6rem 5%;
+        }
+
+        .specs-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .specs-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            padding: 0.65rem 1.7rem;
+            background: transparent;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 50px;
+            color: var(--silver);
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--black);
+            border-color: transparent;
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.4);
+        }
+
+        .specs-pane {
+            display: none;
+        }
+
+        .specs-pane.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .specs-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid rgba(57, 255, 20, 0.25);
+        }
+
+        .specs-right h3 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .specs-right p {
+            color: var(--silver);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .specs-table td {
+            padding: 0.8rem 0.5rem;
+            font-size: 1rem;
+        }
+
+        .specs-table td:first-child {
+            color: var(--silver);
+            font-weight: 500;
+            width: 50%;
+        }
+
+        .specs-table td:last-child {
+            color: var(--white);
+            font-weight: 600;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .specs-table td em {
+            color: var(--green-bright);
+            font-style: normal;
+        }
+
+        /* PROCESS */
+        .process-section {
+            background: var(--charcoal);
+            padding: 6rem 5%;
+        }
+
+        .process-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0;
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 38px;
+            left: 7%;
+            right: 7%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--green-dark), var(--green-bright), var(--green-dark));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-num {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: var(--dark2);
+            border: 3px solid var(--green-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.2rem;
+            transition: all 0.4s;
+        }
+
+        .process-step:hover .step-num {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            border-color: var(--green-bright);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
+        }
+
+        .step-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .step-desc {
+            font-size: 0.82rem;
+            color: var(--silver);
+            line-height: 1.5;
+        }
+
+        /* SEO SECTION */
+        .seo-section {
+            background: var(--dark);
+        }
+
+        .seo-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .seo-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .seo-content h2 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .seo-content h2 span {
+            color: var(--green-bright);
+        }
+
+        .seo-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: var(--green-mid);
+            margin: 2rem 0 1rem;
+            letter-spacing: 1px;
+        }
+
+        .seo-content p {
+            color: var(--silver);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 1.2rem;
+        }
+
+        .seo-content strong {
+            color: var(--white);
+        }
+
+        .seo-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: var(--charcoal);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-card-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: var(--green-bright);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+        }
+
+        .kw-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .kw-tag {
+            padding: 0.25rem 0.75rem;
+            background: rgba(57, 255, 20, 0.06);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 50px;
+            font-size: 0.78rem;
+            color: var(--silver);
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .kw-tag:hover {
+            background: rgba(57, 255, 20, 0.15);
+            color: var(--green-bright);
+            border-color: var(--green-bright);
+        }
+
+        .quick-links {
+            list-style: none;
+        }
+
+        .quick-links li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .quick-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.75rem 0;
+            color: var(--silver);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .quick-links a::before {
+            content: '▸';
+            color: var(--green-bright);
+            flex-shrink: 0;
+        }
+
+        .quick-links a:hover {
+            color: var(--green-bright);
+            padding-left: 0.5rem;
+        }
+
+        /* TESTIMONIALS */
+        .testi-section {
+            background: var(--dark2);
+        }
+
+        .testi-grid {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testi-card {
+            background: var(--charcoal);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(57, 255, 20, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .testi-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 7rem;
+            color: rgba(57, 255, 20, 0.08);
+            font-family: 'Russo One', sans-serif;
+            line-height: 1;
+        }
+
+        .testi-card:hover {
+            border-color: var(--green-bright);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(57, 255, 20, 0.2);
+        }
+
+        .testi-stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testi-text {
+            color: var(--silver);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testi-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.2rem;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+
+        .testi-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            color: var(--white);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .testi-role {
+            font-size: 0.9rem;
+            color: var(--green-mid);
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: var(--dark);
+            padding: 6rem 5%;
+        }
+
+        .faq-inner {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(57, 255, 20, 0.12);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .faq-item.open {
+            border-color: var(--green-bright);
+        }
+
+        .faq-q {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.4rem 1.8rem;
+            cursor: pointer;
+            background: var(--charcoal);
+            transition: background 0.3s;
+        }
+
+        .faq-item.open .faq-q {
+            background: rgba(57, 255, 20, 0.05);
+        }
+
+        .faq-q-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            color: var(--white);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .faq-toggle {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green-bright);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .faq-item.open .faq-toggle {
+            background: var(--green-bright);
+            color: var(--black);
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 400px;
+        }
+
+        .faq-a-inner {
+            padding: 1.2rem 1.8rem 1.8rem;
+            color: var(--silver);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(5, 10, 5, 0.9) 0%, rgba(13, 92, 46, 0.6) 50%, rgba(5, 10, 5, 0.9) 100%), url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1600&q=80') center/cover no-repeat;
+            padding: 7rem 5%;
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-logo {
+            font-size: 5rem;
+            display: block;
+            margin: 0 auto 2rem;
+            animation: logoFloat 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.8));
+        }
+
+        .cta-title {
+            font-family: 'Russo One', sans-serif;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .cta-title span {
+            color: var(--green-bright);
+        }
+
+        .cta-desc {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-trust {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--silver);
+            font-size: 0.95rem;
+        }
+
+        .trust-item::before {
+            content: '✓';
+            color: var(--green-bright);
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020704;
+            padding: 4rem 5% 2rem;
+            border-top: 2px solid rgba(57, 255, 20, 0.2);
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand-logo {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.5));
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-logo-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--green-deep), var(--green-dark));
+            border: 2px solid var(--green-bright);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Russo One', sans-serif;
+            font-size: 1rem;
+            color: var(--green-bright);
+            filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.5));
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-brand-name {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand-desc {
+            color: var(--silver);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-soc {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green-bright);
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-soc:hover {
+            background: var(--green-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--green-bright);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--silver);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--green-bright);
+            padding-left: 0.3rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        .contact-icon {
+            color: var(--green-bright);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .footer-contact-item a {
+            color: var(--green-mid);
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(57, 255, 20, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--silver);
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom span {
+            color: var(--green-bright);
+        }
+
+        /* STICKY */
+        .sticky-wa {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
+            animation: waPulse 2.5s ease-in-out infinite;
+            transition: transform 0.3s;
+        }
+
+        .sticky-wa:hover {
+            transform: scale(1.15);
+        }
+
+        @keyframes waPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 5px 50px rgba(37, 211, 102, 0.9);
+            }
+        }
+
+        #back-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 999;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(57, 255, 20, 0.08);
+            border: 2px solid var(--green-bright);
+            color: var(--green-bright);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        #back-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-top:hover {
+            background: var(--green-bright);
+            color: var(--black);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .prod-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .why-visual {
+                display: none;
+            }
+
+            .specs-pane.active {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .process-grid::before {
+                display: none;
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .seo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-sidebar {
+                position: static;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .hero-h1 {
+                font-size: 2.8rem;
+            }
+
+            .s-title {
+                font-size: 2.2rem;
+            }
+
+            .cta-title {
+                font-size: 2.5rem;
+            }
+
+            .prod-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <meta name="description" content="Professional basketball court flooring in Pakistan. Supply and installation of hardwood maple, vinyl, rubber and PVC sports court surfaces. BWF and FIBA-standard courts. Free quote.">
+  <meta name="keywords" content="basketball court flooring Pakistan, basketball court installation, hardwood basketball floor, vinyl sports floor, FIBA basketball court, sports court Pakistan">
+  <meta name="author" content="Mian Sports Flooring">
+  <meta name="geo.region" content="PK">
+  <meta name="geo.placename" content="Pakistan">
+  <meta property="og:title" content="Basketball Court Flooring Pakistan | Mian Sports Flooring">
+  <meta property="og:description" content="Professional basketball court flooring in Pakistan. Hardwood maple, vinyl, rubber and PVC sports court surfaces.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miansportsflooring.com/basketball_court_flooring.html">
+  <meta property="og:site_name" content="Mian Sports Flooring">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://miansportsflooring.com/basketball_court_flooring.html">
+</head>
+
+<body>
+
+    <div id="cursor"></div>
+
+    <div id="preloader">
+        <div class="pre-rings">
+            <div class="pre-ring"></div>
+            <div class="pre-ring"></div>
+            <div class="pre-ring"></div>
+            <div class="pre-icon">🏀</div>
+        </div>
+        <div class="pre-text">BASKETBALL FLOORING</div>
+    </div>
+
+    <nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="Mian Sports Flooring logo display.png" alt="Mian Sports Flooring" class="nav-logo-img" onerror="this.style.display='none'">
+      <div class="nav-brand-text">
+        <strong>Mian Sports Flooring</strong>
+        <small>Premium Sports Surfaces · Pakistan</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gym_fitness_flooring.html">Gym Flooring</a></li>
+      <li><a href="basketball_court_flooring.html">Basketball</a></li>
+      <li><a href="badminton-court-flooring.html">Badminton</a></li>
+      <li><a href="running-track-surfaces.html">Running Track</a></li>
+      <li><a href="martial-arts-combat-mats.html">Martial Arts</a></li>
+      <li><a href="artificial_grass_turf.html">Turf</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="sports-whatsapp.html" class="nav-cta">Get Free Quote</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+  <button class="mobile-close" id="mobile-close" aria-label="Close navigation menu">✕</button>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="gym_fitness_flooring.html">🏋️ Gym Flooring</a>
+    <a href="basketball_court_flooring.html">🏀 Basketball Courts</a>
+    <a href="badminton-court-flooring.html">🏸 Badminton Courts</a>
+    <a href="running-track-surfaces.html">🏃 Running Tracks</a>
+    <a href="martial-arts-combat-mats.html">🥋 Martial Arts Mats</a>
+    <a href="artificial_grass_turf.html">🌿 Artificial Turf</a>
+    <a href="sports-whatsapp.html" class="mobile-cta">📞 Get Free Quote</a>
+  </nav>
+</div>
+
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="mian-sports-flooring.html">Home</a>
+            <span class="sep">›</span>
+            <a href="#">Products</a>
+            <span class="sep">›</span>
+            <span class="current">🏀 Basketball Court Flooring</span>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-lines"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge">Pakistan's #1 Basketball Flooring Specialists</div>
+                <h1 class="hero-h1">
+                    <span class="line1">PREMIUM</span>
+                    <span class="line2">BASKETBALL COURT</span>
+                    <span class="line3">FLOORING</span>
+                </h1>
+                <p class="hero-p">NBA-grade basketball flooring for indoor & outdoor courts across Pakistan. From maple
+                    hardwood to advanced synthetic surfaces — engineered for performance, safety, and championship-level
+                    play.</p>
+                <div class="hero-tags">
+                    <span class="hero-tag">🪵 Maple Hardwood</span>
+                    <span class="hero-tag">🟩 Synthetic PU</span>
+                    <span class="hero-tag">⬛ EPDM Rubber</span>
+                    <span class="hero-tag">🔲 Modular Tiles</span>
+                    <span class="hero-tag">🏅 FIBA Certified</span>
+                </div>
+                <div class="hero-btns">
+                    <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">🏀 Get Free
+                        Quote</button>
+                    <button class="btn-o"
+                        onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">View
+                        Gallery</button>
+                    <button class="btn-outline"
+                        onclick="document.getElementById('types').scrollIntoView({behavior:'smooth'})">Floor Types
+                        ↓</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="logo-showcase">
+                    <div class="logo-ring"></div>
+                    <div class="logo-ring"></div>
+                    <div class="logo-ring"></div>
+                    <img src="q.jpg" alt="Basketball Court Flooring Pakistan" class="logo-glow-img">
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">SCROLL DOWN</div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-bar">
+        <div class="marquee-track">
+            <span>Basketball Court Flooring</span><span>Maple Hardwood NBA Grade</span><span>Synthetic PU
+                Courts</span><span>Indoor & Outdoor Surfaces</span><span>FIBA Certified Installation</span><span>Rubber
+                Basketball Floors</span><span>Modular Court Tiles</span><span>Court Marking Pakistan</span><span>15 Year
+                Warranty</span><span>500+ Courts Built</span>
+            <span>Basketball Court Flooring</span><span>Maple Hardwood NBA Grade</span><span>Synthetic PU
+                Courts</span><span>Indoor & Outdoor Surfaces</span><span>FIBA Certified Installation</span><span>Rubber
+                Basketball Floors</span><span>Modular Court Tiles</span><span>Court Marking Pakistan</span><span>15 Year
+                Warranty</span><span>500+ Courts Built</span>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-section">
+        <div class="stats-grid reveal">
+            <div class="stat-card">
+                <div class="stat-icon">🏟️</div>
+                <div class="stat-num"><span class="count" data-target="500">0</span><span class="stat-suf">+</span>
+                </div>
+                <div class="stat-lbl">Courts Installed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-num"><span class="count" data-target="10">0</span><span class="stat-suf">+</span></div>
+                <div class="stat-lbl">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🇵🇰</div>
+                <div class="stat-num"><span class="count" data-target="35">0</span><span class="stat-suf">+</span></div>
+                <div class="stat-lbl">Cities Served</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🛡️</div>
+                <div class="stat-num"><span class="count" data-target="15">0</span><span class="stat-suf">yr</span>
+                </div>
+                <div class="stat-lbl">Warranty</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOORING TYPES -->
+    <div class="products-section section-full" id="types">
+        <div class="section" style="padding-bottom:0;">
+            <div class="prod-header reveal">
+                <div class="s-label">Basketball Flooring Solutions</div>
+                <h2 class="s-title">CHOOSE YOUR PERFECT <span>COURT SURFACE</span></h2>
+                <p class="s-desc">Six professional basketball flooring systems — from NBA hardwood to all-weather
+                    outdoor surfaces — each engineered to international standards.</p>
+            </div>
+        </div>
+        <div class="prod-grid" style="padding:2rem 5% 0;max-width:1500px;margin:0 auto;">
+            <div class="prod-card reveal" data-color="green" style="transition-delay:0.1s">
+                <div class="prod-img-wrap"><img src="q.jpg" alt="Maple Hardwood Basketball Court Flooring Pakistan" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">⭐ Most Popular</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Indoor — Professional Grade</div>
+                    <div class="prod-name">Maple Hardwood Flooring</div>
+                    <p class="prod-desc">The gold standard used in NBA arenas. Premium Canadian maple delivers unmatched
+                        ball bounce, traction, and championship-level prestige for professional courts.</p>
+                    <ul class="prod-features">
+                        <li>NBA / FIBA certified</li>
+                        <li>Superior ball response</li>
+                        <li>Shock-absorbing subfloor</li>
+                        <li>Refinishable — 30+ years</li>
+                        <li>Custom court marking</li>
+                        <li>UV polyurethane finish</li>
+                    </ul>
+                    <p class="prod-price">Starting From <strong>Rs. 180/sq.ft</strong></p>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Get Free Quote
+                        →</button>
+                </div>
+            </div>
+            <div class="prod-card reveal" data-color="orange" style="transition-delay:0.2s">
+                <div class="prod-img-wrap"><img src="w.jpg" alt="Synthetic PU Basketball Court Pakistan" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Versatile</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Indoor / Semi-Outdoor</div>
+                    <div class="prod-name">Synthetic PU / Acrylic</div>
+                    <p class="prod-desc">High-performance polyurethane offering excellent durability and low maintenance
+                        — ideal for school, college, and club courts needing FIBA-level performance at accessible cost.
+                    </p>
+                    <ul class="prod-features">
+                        <li>FIBA Level-1 approved</li>
+                        <li>Seamless installation</li>
+                        <li>UV & weather resistant</li>
+                        <li>12+ color options</li>
+                        <li>Slip-resistant surface</li>
+                        <li>10-year warranty</li>
+                    </ul>
+                    <p class="prod-price">Starting From <strong>Rs. 90/sq.ft</strong></p>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Get Free Quote
+                        →</button>
+                </div>
+            </div>
+            <div class="prod-card reveal" data-color="green" style="transition-delay:0.3s">
+                <div class="prod-img-wrap"><img src="r.jpg" alt="Rubber Basketball Court Flooring Pakistan" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Multi-Use</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Indoor — Multi-Sport</div>
+                    <div class="prod-name">EPDM Rubber Flooring</div>
+                    <p class="prod-desc">High-density rubber with superior shock absorption — perfect for schools, gyms,
+                        and community centres that host basketball alongside other activities.</p>
+                    <ul class="prod-features">
+                        <li>High shock absorption</li>
+                        <li>Noise dampening</li>
+                        <li>Multi-sport compatible</li>
+                        <li>Easy maintenance</li>
+                        <li>Rolls & tile formats</li>
+                        <li>Slip-resistant R10</li>
+                    </ul>
+                    <p class="prod-price">Starting From <strong>Rs. 65/sq.ft</strong></p>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Get Free Quote
+                        →</button>
+                </div>
+            </div>
+            <div class="prod-card reveal" data-color="gold" style="transition-delay:0.4s">
+                <div class="prod-img-wrap"><img src="download.jpg" alt="Modular Basketball Court Tiles Pakistan" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Outdoor King</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Outdoor — All Weather</div>
+                    <div class="prod-name">Modular PP Tiles</div>
+                    <p class="prod-desc">Interlocking polypropylene tiles with tool-free snap-lock installation — the
+                        fastest and most portable outdoor basketball solution, self-draining and UV-stabilized for 15+
+                        years.</p>
+                    <ul class="prod-features">
+                        <li>Snap-lock — no adhesive</li>
+                        <li>Self-draining grid</li>
+                        <li>UV heat stabilized</li>
+                        <li>Portable & reusable</li>
+                        <li>20+ color options</li>
+                        <li>15-year warranty</li>
+                    </ul>
+                    <p class="prod-price">Starting From <strong>Rs. 75/sq.ft</strong></p>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Get Free Quote
+                        →</button>
+                </div>
+            </div>
+            <div class="prod-card reveal" data-color="blue" style="transition-delay:0.5s">
+                <div class="prod-img-wrap"><img src="..jpg" alt="Sports Vinyl Basketball Court Pakistan" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Budget Smart</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Indoor — Economy</div>
+                    <div class="prod-name">Sports Vinyl / Linoleum</div>
+                    <p class="prod-desc">Professional sports vinyl with wood-look aesthetics and synthetic durability.
+                        Cost-effective and ideal for school and community basketball courts with pre-marked line
+                        options.</p>
+                    <ul class="prod-features">
+                        <li>Wood-look finish</li>
+                        <li>Cushion underfoot</li>
+                        <li>Water resistant</li>
+                        <li>Pre-marked lines available</li>
+                        <li>Hygienic surface</li>
+                        <li>5–10 year guarantee</li>
+                    </ul>
+                    <p class="prod-price">Starting From <strong>Rs. 55/sq.ft</strong></p>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Get Free Quote
+                        →</button>
+                </div>
+            </div>
+            <div class="prod-card reveal" data-color="red" style="transition-delay:0.6s">
+                <div class="prod-img-wrap"><img src="jj.jpg" alt="Outdoor Acrylic Basketball Court Pakistan" loading="lazy">
+                    <div class="prod-img-overlay"></div>
+                    <div class="prod-img-tag">Heavy Duty</div>
+                </div>
+                <div class="prod-body">
+                    <div class="prod-cat">Outdoor — Professional</div>
+                    <div class="prod-name">Concrete & Acrylic Coating</div>
+                    <p class="prod-desc">Multi-layer acrylic cushion over concrete — the most durable outdoor solution,
+                        built to withstand Pakistan's intense heat, monsoons, and heavy usage across 25+ years.</p>
+                    <ul class="prod-features">
+                        <li>FIBA outdoor spec</li>
+                        <li>Extreme heat resistant</li>
+                        <li>Anti-fade pigment</li>
+                        <li>Full court marking</li>
+                        <li>25+ year structure</li>
+                        <li>Anti-slip surface</li>
+                    </ul>
+                    <p class="prod-price">Starting From <strong>Rs. 110/sq.ft</strong></p>
+                    <button class="prod-btn" onclick="window.location.href='sports-whatsapp.html'">Get Free Quote
+                        →</button>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:3.5rem;padding:0 5% 6rem;">
+            <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">💬 Not Sure Which Floor?
+                Ask Our Expert — Free</button>
+        </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery-section" id="gallery">
+        <div class="gallery-header reveal">
+            <div class="s-label">Our Projects</div>
+            <h2 class="s-title">BASKETBALL COURT <span>GALLERY</span></h2>
+            <p class="s-desc">Real courts built by Mian Sports Flooring across Pakistan — every project a testament to
+                quality and precision.</p>
+        </div>
+        <div style="overflow:hidden;">
+            <div class="gallery-strip">
+                <div class="gallery-img"><img src="q.jpg" alt="Indoor Hardwood Basketball Court Lahore">
+                    <div class="gallery-img-label">Hardwood Indoor Court</div>
+                </div>
+                <div class="gallery-img"><img src="mm.jpg" alt="NBA Style Basketball Court Pakistan">
+                    <div class="gallery-img-label">NBA Style Court</div>
+                </div>
+                <div class="gallery-img"><img src="w.jpg" alt="Outdoor Basketball Court Pakistan">
+                    <div class="gallery-img-label">Synthetic Outdoor Court</div>
+                </div>
+                <div class="gallery-img">
+                    <img src="Reblog%20by%20@wildnrare%20%C2%B7%201%20image.jpg" alt="Indoor Basketball Court Flooring" loading="lazy">
+                    <div class="gallery-img-label">Indoor Basketball Court</div>
+                </div>
+                <div class="gallery-img"><img src="r.jpg" alt="Basketball Court Marking Pakistan">
+                    <div class="gallery-img-label">Court Marking & Lines</div>
+                </div>
+                <div class="gallery-img"><img src="download.jpg" alt="Modular Basketball Tiles Pakistan">
+                    <div class="gallery-img-label">Modular Tile Court</div>
+                </div>
+                <div class="gallery-img"><img src="pp.jpg" alt="Commercial Basketball Court Pakistan">
+                    <div class="gallery-img-label">Commercial Sports Hub</div>
+                </div>
+                <div class="gallery-img"><img src="tt.jpg" alt="School Basketball Court Pakistan">
+                    <div class="gallery-img-label">School Court</div>
+                </div>
+                <div class="gallery-img"><img src="ww.jpg"
+                        alt="Pro Basketball Arena Pakistan">
+                    <div class="gallery-img-label">Pro Arena Court</div>
+                </div>
+                <div class="gallery-img"><img src="q.jpg" alt="Basketball Flooring Pakistan">
+                    <div class="gallery-img-label">Hardwood Indoor Court</div>
+                </div>
+                <div class="gallery-img"><img src="mm.jpg" alt="NBA Court Pakistan">
+                    <div class="gallery-img-label">NBA Style Court</div>
+                </div>
+                <div class="gallery-img"><img src="w.jpg" alt="Outdoor Court Pakistan">
+                    <div class="gallery-img-label">Synthetic Outdoor Court</div>
+                </div>
+                <div class="gallery-img"><img src="r.jpg" alt="Court Lines Pakistan">
+                    <div class="gallery-img-label">Court Marking & Lines</div>
+                </div>
+                <div class="gallery-img"><img src="download.jpg" alt="Modular Court Pakistan">
+                    <div class="gallery-img-label">Modular Tile Court</div>
+                </div>
+                <div class="gallery-img"><img src="pp.jpg" alt="Sports Hub Pakistan">
+                    <div class="gallery-img-label">Commercial Sports Hub</div>
+                </div>
+                <div class="gallery-img"><img src="tt.jpg" alt="School Court Pakistan">
+                    <div class="gallery-img-label">School Court</div>
+                </div>
+                <div class="gallery-img"><img src="ww.jpg"
+                        alt="Arena Pakistan">
+                    <div class="gallery-img-label">Pro Arena Court</div>
+                </div>
+            </div>
+            <div class="gallery-strip gallery-strip-2">
+                <div class="gallery-img"><img src="hh.jpg" alt="Basketball Court Renovation Pakistan">
+                    <div class="gallery-img-label">Court Renovation</div>
+                </div>
+                <div class="gallery-img"><img src="download.jpg" alt="FIBA Basketball Court Pakistan">
+                    <div class="gallery-img-label">FIBA Standard Court</div>
+                </div>
+                <div class="gallery-img"><img src="jj.jpg" alt="Half Court Pakistan">
+                    <div class="gallery-img-label">Half Court Install</div>
+                </div>
+                <div class="gallery-img"><img src="rr.jpg" alt="Rooftop Basketball Court Pakistan">
+                    <div class="gallery-img-label">Rooftop Court</div>
+                </div>
+                <div class="gallery-img"><img src="qq.jpg" alt="University Basketball Court Pakistan">
+                    <div class="gallery-img-label">University Court</div>
+                </div>
+                <div class="gallery-img"><img src="ll.jpg" alt="Hotel Basketball Court Pakistan">
+                    <div class="gallery-img-label">5-Star Hotel Court</div>
+                </div>
+                <div class="gallery-img"><img src="r.jpg" alt="Court Restoration Pakistan">
+                    <div class="gallery-img-label">Court Restoration</div>
+                </div>
+                <div class="gallery-img"><img src="download.jpg" alt="Karachi Basketball Court">
+                    <div class="gallery-img-label">Karachi Project</div>
+                </div>
+                <div class="gallery-img"><img src="hh.jpg" alt="Court Pakistan">
+                    <div class="gallery-img-label">Court Renovation</div>
+                </div>
+                <div class="gallery-img"><img src="download.jpg" alt="FIBA Court Pakistan">
+                    <div class="gallery-img-label">FIBA Standard Court</div>
+                </div>
+                <div class="gallery-img"><img
+                        src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=640&q=80"
+                        alt="Half Court Pakistan">
+                    <div class="gallery-img-label">Half Court Install</div>
+                </div>
+                <div class="gallery-img"><img src="rr.jpg" alt="Rooftop Court Pakistan">
+                    <div class="gallery-img-label">Rooftop Court</div>
+                </div>
+                <div class="gallery-img"><img src="qq.jpg" alt="University Court Pakistan">
+                    <div class="gallery-img-label">University Court</div>
+                </div>
+                <div class="gallery-img"><img src="ll.jpg" alt="Hotel Court Pakistan">
+                    <div class="gallery-img-label">5-Star Hotel Court</div>
+                </div>
+                <div class="gallery-img"><img src="r.jpg" alt="Restoration Pakistan">
+                    <div class="gallery-img-label">Court Restoration</div>
+                </div>
+                <div class="gallery-img"><img src="download.jpg" alt="Karachi Court Pakistan">
+                    <div class="gallery-img-label">Karachi Project</div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:3rem;padding:0 5%;">
+            <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">📸 View All Projects on
+                WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- WHY US -->
+    <div class="why-section section-full" id="why">
+        <div class="why-inner section">
+            <div class="why-visual reveal-left">
+                <div class="why-badge-overlay">
+                    <div class="why-badge-num">500+</div>
+                    <div class="why-badge-txt">Courts Built</div>
+                </div>
+                <div class="why-img-main">
+                    <img src="zz.jpg"
+                        alt="Mian Sports Flooring Basketball Court Installation Pakistan">
+                </div>
+                <div class="why-img-float">
+                    <img src="xx.jpg"
+                        alt="Basketball Court Flooring Quality">
+                </div>
+                <div class="why-img-float-2">
+                    <img src="cc.jpg"
+                        alt="Why Choose Us">
+                </div>
+            </div>
+            <div class="reveal-right">
+                <div class="s-label">Why Choose Us</div>
+                <h2 class="s-title">WHY MIAN SPORTS IS <span>PAKISTAN'S BEST</span></h2>
+                <p class="s-desc">Over a decade of expertise in professional basketball court flooring — from community
+                    courts to 5-star hotels and national-level facilities. We deliver international quality right here
+                    in Pakistan.</p>
+                <ul class="why-list">
+                    <li>
+                        <div class="why-list-icon">🏅</div>
+                        <div>
+                            <div class="why-list-title">NBA & FIBA Certified Materials</div>
+                            <div class="why-list-desc">All flooring materials meet international basketball federation
+                                standards for professional-grade play surfaces.</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="why-list-icon">⚡</div>
+                        <div>
+                            <div class="why-list-title">Fastest Installation in Pakistan</div>
+                            <div class="why-list-desc">Expert teams deliver full-court installation in record time
+                                without any compromise on quality.</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="why-list-icon">🛡️</div>
+                        <div>
+                            <div class="why-list-title">15-Year Performance Warranty</div>
+                            <div class="why-list-desc">Industry-leading warranty on all basketball court installations.
+                                We back every court we build — for the long game.</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="why-list-icon">🎨</div>
+                        <div>
+                            <div class="why-list-title">Full Custom Design Service</div>
+                            <div class="why-list-desc">Custom logos, team colours, multi-sport markings — your court,
+                                your identity, your brand.</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="why-list-icon">🔧</div>
+                        <div>
+                            <div class="why-list-title">End-to-End Project Management</div>
+                            <div class="why-list-desc">Consultation, design, site prep, installation, marking, and
+                                after-sales — one company, zero headaches.</div>
+                        </div>
+                    </li>
+                </ul>
+                <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+                    <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">💬 Talk to an
+                        Expert</button>
+                    <button class="btn-o"
+                        onclick="document.getElementById('specs').scrollIntoView({behavior:'smooth'})">View
+                        Specifications</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SPECS TABS -->
+    <div class="specs-section" id="specs">
+        <div class="specs-inner">
+            <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+                <div class="s-label">Technical Details</div>
+                <h2 class="s-title">FLOORING <span>SPECIFICATIONS</span></h2>
+                <p class="s-desc" style="margin:0 auto;text-align:center;">Deep-dive specs for each basketball flooring
+                    system to help you make the most informed choice.</p>
+            </div>
+            <div class="specs-tabs reveal">
+                <button class="tab-btn active" onclick="openTab(event,'t-maple')">🪵 Maple Hardwood</button>
+                <button class="tab-btn" onclick="openTab(event,'t-pu')">🟩 Synthetic PU</button>
+                <button class="tab-btn" onclick="openTab(event,'t-rubber')">⬛ EPDM Rubber</button>
+                <button class="tab-btn" onclick="openTab(event,'t-modular')">🔲 Modular Tiles</button>
+            </div>
+            <div class="specs-pane active" id="t-maple">
+                <img src="q.jpg" alt="Maple Hardwood Basketball Flooring Specs Pakistan" class="specs-img">
+                <div class="specs-right">
+                    <h3>Maple Hardwood Basketball Flooring</h3>
+                    <p>Northern Maple (Acer saccharum) — the definitive professional choice providing the perfect
+                        combination of hardness, elasticity, and ball response demanded worldwide.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td>Material</td>
+                            <td>Northern Maple (Acer saccharum)</td>
+                        </tr>
+                        <tr>
+                            <td>Thickness</td>
+                            <td><em>19mm – 22mm</em> solid hardwood</td>
+                        </tr>
+                        <tr>
+                            <td>Janka Hardness</td>
+                            <td><em>1450 lbf</em> (NBA standard)</td>
+                        </tr>
+                        <tr>
+                            <td>Shock Absorption</td>
+                            <td><em>≥53%</em> (DIN 18035-6)</td>
+                        </tr>
+                        <tr>
+                            <td>Ball Bounce</td>
+                            <td><em>≥90%</em> FIBA compliant</td>
+                        </tr>
+                        <tr>
+                            <td>Finish Coating</td>
+                            <td>10-layer water-based polyurethane</td>
+                        </tr>
+                        <tr>
+                            <td>Subfloor System</td>
+                            <td>Floating sleeper / resilient pad</td>
+                        </tr>
+                        <tr>
+                            <td>Court Dimensions</td>
+                            <td>28m×15m full or custom</td>
+                        </tr>
+                        <tr>
+                            <td>Warranty</td>
+                            <td><em>15+ Years</em> structural</td>
+                        </tr>
+                        <tr>
+                            <td>Certifications</td>
+                            <td><em>NBA, FIBA, FIBA-EuroLeague</em></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="specs-pane" id="t-pu">
+                <img src="w.jpg" alt="Synthetic PU Basketball Court Specs Pakistan" class="specs-img">
+                <div class="specs-right">
+                    <h3>Synthetic PU / Acrylic Flooring</h3>
+                    <p>High-performance polyurethane systems meeting FIBA class requirements. Excellent shock
+                        absorption, consistent friction, vibrant colours for clubs, schools, and mid-tier professional
+                        courts.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td>Material</td>
+                            <td>Polyurethane / Acrylic resin</td>
+                        </tr>
+                        <tr>
+                            <td>Total Thickness</td>
+                            <td><em>8mm – 12mm</em> multi-layer</td>
+                        </tr>
+                        <tr>
+                            <td>Surface Friction</td>
+                            <td><em>0.5 – 0.7 μ</em> (DIN ISO 9283)</td>
+                        </tr>
+                        <tr>
+                            <td>Shock Absorption</td>
+                            <td><em>≥25%</em> FIBA Class C+</td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Range</td>
+                            <td><em>-20°C to +70°C</em></td>
+                        </tr>
+                        <tr>
+                            <td>Seam Type</td>
+                            <td>Seamless monolithic surface</td>
+                        </tr>
+                        <tr>
+                            <td>Colors Available</td>
+                            <td>12+ standard + custom RAL</td>
+                        </tr>
+                        <tr>
+                            <td>Installation Time</td>
+                            <td>3–7 days (full court)</td>
+                        </tr>
+                        <tr>
+                            <td>Warranty</td>
+                            <td><em>10 Years</em></td>
+                        </tr>
+                        <tr>
+                            <td>Certifications</td>
+                            <td><em>FIBA Level 1, EN 14904</em></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="specs-pane" id="t-rubber">
+                <img src="r.jpg" alt="EPDM Rubber Basketball Court Specs Pakistan" class="specs-img">
+                <div class="specs-right">
+                    <h3>EPDM Rubber Basketball Flooring</h3>
+                    <p>Premium EPDM rubber delivering superior shock absorption, noise reduction, and durability for
+                        multi-use indoor basketball facilities including schools, gyms, and community sports centres.
+                    </p>
+                    <table class="specs-table">
+                        <tr>
+                            <td>Material</td>
+                            <td>EPDM Rubber (recycled + virgin)</td>
+                        </tr>
+                        <tr>
+                            <td>Thickness Options</td>
+                            <td><em>8mm, 10mm, 12mm, 15mm</em></td>
+                        </tr>
+                        <tr>
+                            <td>Density</td>
+                            <td><em>950 – 1100 kg/m³</em></td>
+                        </tr>
+                        <tr>
+                            <td>Shore A Hardness</td>
+                            <td><em>45–55°</em></td>
+                        </tr>
+                        <tr>
+                            <td>Slip Resistance</td>
+                            <td><em>R10 Anti-slip</em></td>
+                        </tr>
+                        <tr>
+                            <td>Noise Reduction</td>
+                            <td><em>18–22 dB</em></td>
+                        </tr>
+                        <tr>
+                            <td>Flammability</td>
+                            <td>Class B1 (DIN 4102)</td>
+                        </tr>
+                        <tr>
+                            <td>Format</td>
+                            <td>Rolls 1.2m wide / 1m×1m tiles</td>
+                        </tr>
+                        <tr>
+                            <td>Warranty</td>
+                            <td><em>10 Years</em></td>
+                        </tr>
+                        <tr>
+                            <td>Certifications</td>
+                            <td><em>EN 1177, REACH compliant</em></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="specs-pane" id="t-modular">
+                <img src="download.jpg" alt="Modular PP Basketball Tiles Specs Pakistan" class="specs-img">
+                <div class="specs-right">
+                    <h3>Modular Polypropylene Court Tiles</h3>
+                    <p>Advanced interlocking PP sports tiles engineered for outstanding outdoor performance, rapid
+                        installation, and long-term durability under Pakistan's demanding climate year-round.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td>Material</td>
+                            <td>Virgin Polypropylene (PP)</td>
+                        </tr>
+                        <tr>
+                            <td>Tile Size</td>
+                            <td><em>30cm × 30cm</em> or 40cm×40cm</td>
+                        </tr>
+                        <tr>
+                            <td>Thickness</td>
+                            <td><em>13mm – 16mm</em></td>
+                        </tr>
+                        <tr>
+                            <td>Load Capacity</td>
+                            <td><em>800 kg/m²</em></td>
+                        </tr>
+                        <tr>
+                            <td>UV Resistance</td>
+                            <td>Stabilized for <em>15+ years</em></td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Range</td>
+                            <td><em>-40°C to +80°C</em></td>
+                        </tr>
+                        <tr>
+                            <td>Drainage</td>
+                            <td>Self-draining grid system</td>
+                        </tr>
+                        <tr>
+                            <td>Installation</td>
+                            <td>Tool-free snap-lock</td>
+                        </tr>
+                        <tr>
+                            <td>Colors</td>
+                            <td>20+ color options</td>
+                        </tr>
+                        <tr>
+                            <td>Warranty</td>
+                            <td><em>15 Years</em></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:3rem;">
+                <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">Request Full
+                    Technical Brochure</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="process-section" id="process">
+        <div class="process-inner">
+            <div style="text-align:center;" class="reveal">
+                <div class="s-label">How It Works</div>
+                <h2 class="s-title">OUR <span>INSTALLATION PROCESS</span></h2>
+                <p class="s-desc" style="margin:0 auto;text-align:center;">From first call to your first game — a
+                    professional 6-step process managed by our expert team.</p>
+            </div>
+            <div class="process-grid reveal">
+                <div class="process-step">
+                    <div class="step-num">📞</div>
+                    <div class="step-title">Consultation</div>
+                    <div class="step-desc">Free site visit & requirement assessment</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">📐</div>
+                    <div class="step-title">Design & Quote</div>
+                    <div class="step-desc">Court design, material selection & quotation</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">🏗️</div>
+                    <div class="step-title">Site Prep</div>
+                    <div class="step-desc">Sub-base leveling, concrete & moisture testing</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">🛠️</div>
+                    <div class="step-title">Installation</div>
+                    <div class="step-desc">Professional flooring by certified technicians</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">🎨</div>
+                    <div class="step-title">Court Marking</div>
+                    <div class="step-desc">Precision lines, logos & custom graphics</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">✅</div>
+                    <div class="step-title">Handover</div>
+                    <div class="step-desc">QC inspection, handover & warranty docs</div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:4rem;">
+                <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">Start Your Court
+                    Project Today</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <div class="seo-section section-full" id="about">
+        <div class="seo-inner section" style="padding-top:0;padding-bottom:0;">
+            <div class="seo-grid">
+                <div class="seo-content reveal-left">
+                    <h2>PROFESSIONAL BASKETBALL COURT FLOORING IN <span>PAKISTAN</span></h2>
+                    <p>Mian Sports Flooring is Pakistan's premier supplier and installer of professional basketball
+                        court flooring. Whether building new or renovating, our team brings international-grade
+                        materials and technical expertise to projects across Lahore, Karachi, Islamabad, Rawalpindi,
+                        Peshawar, Multan, Faisalabad, and 35+ cities nationwide.</p>
+                    <h3>🏀 Why Basketball Court Flooring Matters</h3>
+                    <p>The surface beneath your players' feet is a critical performance and safety decision. The right
+                        basketball flooring directly affects player performance, injury prevention, ball bounce
+                        consistency, and the lifespan of your facility. Professional surfaces — whether <strong>maple
+                            hardwood</strong>, <strong>synthetic PU</strong>, or <strong>modular tiles</strong> — are
+                        engineered to absorb shock, control friction, and deliver the consistent playing surface that
+                        athletes at every level deserve.</p>
+                    <h3>🏟️ Indoor Basketball Court Flooring</h3>
+                    <p>For indoor courts, we specialize in <strong>maple hardwood basketball flooring</strong> — the
+                        material used in NBA arenas and FIBA-certified venues worldwide. Our systems feature floating
+                        subfloor technology for maximum shock absorption, multi-layer polyurethane finishes, and
+                        precision court marking to international specifications. For budget-conscious projects, our
+                        <strong>synthetic PU</strong> and <strong>sports vinyl</strong> solutions deliver exceptional
+                        performance at significantly lower cost.
+                    </p>
+                    <h3>🌤️ Outdoor Basketball Court Surfaces</h3>
+                    <p>Pakistan's outdoor climate demands robust, weather-resistant surfaces. Our outdoor systems —
+                        including <strong>acrylic cushion coatings</strong>, <strong>modular polypropylene
+                            tiles</strong>, and <strong>EPDM rubber</strong> — withstand extreme heat, rain, UV
+                        exposure, and heavy usage without fading or cracking. We've built durable outdoor courts for
+                        government complexes, housing societies, hotels, and commercial parks across Pakistan.</p>
+                    <h3>📍 Serving All of Pakistan</h3>
+                    <p>Mian Sports Flooring has successfully installed basketball flooring in Lahore, Karachi,
+                        Islamabad, Rawalpindi, Peshawar, Multan, Sialkot, Faisalabad, Gujranwala, Quetta, and 35+
+                        cities. Our mobile installation teams ensure the same premium quality whether your project is in
+                        a tier-1 city or a remote location.</p>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+                        <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">🏀 Get Free
+                            Consultation</button>
+                        <button class="btn-outline"
+                            onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">Read FAQs
+                            →</button>
+                    </div>
+                </div>
+                <div class="seo-sidebar reveal-right">
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-title">🔍 Top Search Keywords</div>
+                        <div class="kw-cloud">
+                            <span class="kw-tag">basketball court flooring Pakistan</span><span
+                                class="kw-tag">basketball flooring Lahore</span><span class="kw-tag">hardwood basketball
+                                floor</span><span class="kw-tag">NBA grade flooring</span><span class="kw-tag">indoor
+                                basketball court</span><span class="kw-tag">outdoor basketball surface</span><span
+                                class="kw-tag">FIBA court flooring</span><span class="kw-tag">maple basketball
+                                floor</span><span class="kw-tag">synthetic basketball court</span><span
+                                class="kw-tag">basketball court Karachi</span><span class="kw-tag">rubber basketball
+                                flooring</span><span class="kw-tag">basketball tiles Pakistan</span><span
+                                class="kw-tag">court marking painting</span><span class="kw-tag">basketball court
+                                installation</span><span class="kw-tag">PU sports flooring Pakistan</span><span
+                                class="kw-tag">modular court tiles</span><span class="kw-tag">acrylic basketball
+                                court</span><span class="kw-tag">school basketball floor</span><span
+                                class="kw-tag">basketball flooring price</span><span class="kw-tag">court renovation
+                                Pakistan</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-title">⚡ Quick Links</div>
+                        <ul class="quick-links">
+                            <li><a href="#types">Compare Floor Types</a></li>
+                            <li><a href="#gallery">Project Gallery</a></li>
+                            <li><a href="#specs">Technical Specifications</a></li>
+                            <li><a href="#process">Installation Process</a></li>
+                            <li><a href="#faq">Frequently Asked Questions</a></li>
+                            <li><a href="#contact">Contact Our Team</a></li>
+                            <li><a href="mian-sports-flooring.html">Back to Homepage</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-card" style="border-color:rgba(57,255,20,0.4);background:rgba(13,92,46,0.2);">
+                        <div class="sidebar-card-title">📞 Direct Contact</div>
+                        <p style="color:var(--silver);font-size:0.95rem;line-height:1.7;margin-bottom:1.2rem;">Ready to
+                            build your court? Our experts are available Mon–Sat, 9AM–7PM.</p>
+                        <button class="btn-g" style="width:100%;margin-bottom:0.8rem;"
+                            onclick="window.location.href='sports-whatsapp.html'">💬 WhatsApp Us</button>
+                        <button class="btn-outline" style="width:100%;"
+                            onclick="window.location.href='sports-whatsapp.html'">📞 Call Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="testi-section section-full" id="testimonials">
+        <div class="section" style="padding-bottom:0;">
+            <div style="text-align:center;" class="reveal">
+                <div class="s-label">Client Reviews</div>
+                <h2 class="s-title">WHAT OUR CLIENTS SAY ABOUT <span>OUR COURTS</span></h2>
+                <p class="s-desc" style="margin:0 auto;text-align:center;">500+ satisfied clients from schools, clubs,
+                    hotels, and academies across Pakistan trust Mian Sports Flooring.</p>
+            </div>
+        </div>
+        <div class="testi-grid" style="padding:3rem 5% 6rem;">
+            <div class="testi-card reveal" style="transition-delay:0.1s">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"Mian Sports Flooring installed a full NBA-spec maple hardwood court for our
+                    basketball academy in Lahore. The quality is world-class — every bounce, every pivot is perfect. Our
+                    players can immediately feel the international standard."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">AK</div>
+                    <div>
+                        <div class="testi-name">AHMED KHAN</div>
+                        <div class="testi-role">Director, Champions Basketball Academy, Lahore</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal" style="transition-delay:0.2s">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"We had modular outdoor basketball tiles installed at our residential community.
+                    Done in 2 days, the court looks stunning and holds up perfectly in the summer heat. Absolutely
+                    outstanding quality and service from start to finish."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">SR</div>
+                    <div>
+                        <div class="testi-name">SAAD RAZA</div>
+                        <div class="testi-role">GM, Platinum Residency, Karachi</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal" style="transition-delay:0.3s">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"Our school needed a quality court within budget. Mian Sports delivered synthetic
+                    PU flooring that exceeded all expectations. Precise court marking, excellent surface, and the
+                    10-year warranty gives complete peace of mind."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">FM</div>
+                    <div>
+                        <div class="testi-name">FAISAL MAHMOOD</div>
+                        <div class="testi-role">Principal, Beacon House Islamabad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section" id="faq">
+        <div style="text-align:center;" class="reveal">
+            <div class="s-label">Common Questions</div>
+            <h2 class="s-title">BASKETBALL FLOORING <span>FAQs</span></h2>
+            <p class="s-desc" style="margin:0 auto;text-align:center;">Everything you need to know before investing in a
+                professional basketball court in Pakistan.</p>
+        </div>
+        <div class="faq-inner">
+            <div class="faq-item reveal">
+                <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is the best basketball court
+                        flooring for indoor use in Pakistan?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">For indoor basketball courts in Pakistan, maple hardwood flooring is the
+                        gold standard — the same material used in NBA arenas. It delivers superior ball bounce,
+                        excellent shock absorption, and a prestigious look. For budget-conscious projects, synthetic PU
+                        or sports vinyl provides great performance at a fraction of the cost. We recommend hardwood for
+                        professional academies and clubs, and PU/vinyl for schools and community centers.</div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How much does basketball court
+                        flooring cost in Pakistan?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Basketball court flooring costs vary by material: sports vinyl from Rs.
+                        55/sq.ft, EPDM rubber from Rs. 65/sq.ft, modular PP tiles from Rs. 75/sq.ft, synthetic PU from
+                        Rs. 90/sq.ft, concrete/acrylic from Rs. 110/sq.ft, and maple hardwood from Rs. 180/sq.ft. A full
+                        standard indoor court (28m×15m = 420 sqm) ranges from Rs. 2.3M to Rs. 8M+ depending on surface.
+                        Contact us for a free site-specific quotation.</div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What are the standard dimensions
+                        of a basketball court?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">FIBA standard court dimensions are 28m (length) × 15m (width). For NBA
+                        regulations, courts are 28.65m × 15.24m. We also install half courts (14m×15m), FIBA 3x3 courts
+                        (15m×11m), and fully custom sizes. All dimensions come with professional court marking included
+                        as standard.</div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How long does basketball court
+                        installation take?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Modular PP tiles install in 1–2 days for a full court. Synthetic PU and
+                        acrylic systems take 5–7 days including curing time. Rubber flooring takes 2–3 days. Maple
+                        hardwood flooring requires 7–14 days for full installation including subfloor, laying, sanding,
+                        and multi-layer finishing. Court marking adds 1–2 additional days after the surface cures fully.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you offer warranty on
+                        basketball court installations?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Yes — we offer industry-leading warranties on all installations. Maple
+                        hardwood: 15+ year structural warranty. Synthetic PU and acrylic: 10-year warranty. EPDM rubber:
+                        10-year warranty. Modular PP tiles: 15-year material warranty. All warranties cover
+                        manufacturing defects, delamination, and surface failure under normal use. After-sales
+                        maintenance service is also available nationwide.</div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Which flooring is best for outdoor
+                        courts in Pakistan's climate?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">For outdoor courts in Pakistan, we recommend modular polypropylene tiles or
+                        acrylic cushion coating over concrete. Both withstand extreme heat (up to +80°C for PP tiles),
+                        UV radiation, monsoon rain, and heavy foot traffic without performance loss. PP tiles also add
+                        self-drainage and portability advantages. Hardwood is strictly for indoor use only.</div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Does court marking and line
+                        painting come included?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Yes — all our basketball court installations include professional court
+                        marking as standard. We paint all basketball lines (3-point arc, free throw line, key/paint
+                        area, center circle, half-court line) to FIBA or NBA specifications. We also offer custom logos,
+                        team insignia, multi-sport markings, and branded court graphics at no extra design charge.</div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can you install flooring over
+                        existing concrete?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Absolutely. Most basketball flooring systems install directly over existing
+                        concrete, provided it is structurally sound, level (tolerance ≤3mm in 3m), and moisture-free. We
+                        conduct a full site assessment before installation and perform any required remedial work —
+                        leveling, moisture barriers, crack repairs. Modular tiles are the easiest option for existing
+                        concrete slabs.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section" id="contact">
+        <div class="cta-inner">
+            <span class="cta-logo">🏀</span>
+            <h2 class="cta-title">READY TO BUILD YOUR <span>DREAM COURT?</span></h2>
+            <p class="cta-desc">Join 500+ satisfied clients across Pakistan. Get your free consultation, site visit, and
+                detailed quotation within 48 hours. No commitment required.</p>
+            <div class="cta-btns">
+                <button class="btn-g" onclick="window.location.href='sports-whatsapp.html'">💬 WhatsApp for Free
+                    Quote</button>
+                <button class="btn-o" onclick="window.location.href='sports-whatsapp.html'">📞 Call <a href="tel:+923116928935">0311-6928935</a></button>
+                <button class="btn-outline" onclick="window.location.href='mailto:info@miansportsflooring.pk'">📧 Send
+                    Email</button>
+            </div>
+            <div class="cta-trust">
+                <span class="trust-item">Free Site Visit & Consultation</span>
+                <span class="trust-item">48-Hour Detailed Quote</span>
+                <span class="trust-item">15-Year Warranty</span>
+                <span class="trust-item">NBA & FIBA Certified</span>
+                <span class="trust-item">Nationwide Service</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo-box">MSF</div>
+                <div class="footer-brand-name">MIAN SPORTS FLOORING</div>
+                <p class="footer-brand-desc">Pakistan's leading provider of premium basketball and sports flooring
+                    solutions. 10+ years of excellence, 500+ projects delivered, and a commitment to quality that never
+                    wavers.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" target="_blank" class="footer-soc">f</a>
+                    <a href="https://instagram.com" target="_blank" class="footer-soc">📷</a>
+                    <a href="https://linkedin.com" target="_blank" class="footer-soc">in</a>
+                    <a href="https://youtube.com" target="_blank" class="footer-soc">▶</a>
+                    <a href="sports-whatsapp.html" target="_blank" class="footer-soc">💬</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Basketball Services</h4>
+                <ul>
+                    <li><a href="#types">▸ Maple Hardwood Courts</a></li>
+                    <li><a href="#types">▸ Synthetic PU Flooring</a></li>
+                    <li><a href="#types">▸ Rubber Basketball Floors</a></li>
+                    <li><a href="#types">▸ Modular Court Tiles</a></li>
+                    <li><a href="#types">▸ Outdoor Basketball Courts</a></li>
+                    <li><a href="#types">▸ Court Marking & Painting</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Other Products</h4>
+                <ul>
+                    <li><a href="mian-sports-flooring.html">▸ All Sports Flooring</a></li>
+                    <li><a href="#">▸ Badminton Courts</a></li>
+                    <li><a href="#">▸ Gym Flooring</a></li>
+                    <li><a href="#">▸ Running Tracks</a></li>
+                    <li><a href="#">▸ Artificial Grass</a></li>
+                    <li><a href="#">▸ Martial Arts Mats</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact-item"><span class="contact-icon">📍</span>123 Sports Avenue, Lahore, Pakistan
+                </div>
+                <div class="footer-contact-item"><span class="contact-icon">📞</span><a
+                        href="tel:+923116928935">0311-6928935</a></div>
+                <div class="footer-contact-item"><span class="contact-icon">📧</span><a
+                        href="mailto:info@miansportsflooring.pk">info@miansportsflooring.pk</a></div>
+                <div class="footer-contact-item"><span class="contact-icon">🕐</span>Mon–Sat: 9:00 AM – 7:00 PM</div>
+                <div class="footer-contact-item"><span class="contact-icon">🌐</span>www.miansportsflooring.pk</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span class="footer-year"></span> <span>Mian Sports Flooring</span>. All Rights Reserved.</span>
+            <span>Designed with ❤️ for champions of <span>Pakistan</span></span>
+        </div>
+    </footer>
+
+    <a class="sticky-wa" href="https://wa.me/923116928935?text=Hi%2C%20I%20want%20a%20quote%20for%20Basketball%20Court%20Flooring.%20Please%20share%20details%20and%20pricing." target="_blank" title="Chat on WhatsApp">💬</a>
+    <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top">▲</button>
+
+    <script src="assets/js/main.js" defer></script>
+    <script>
+        window.addEventListener('load', () => { setTimeout(() => document.getElementById('preloader').classList.add('gone'), 1300); });
+        const cur = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => { cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px'; });
+        document.querySelectorAll('a,button,.prod-card,.testi-card,.gallery-img,.faq-q').forEach(el => { el.addEventListener('mouseenter', () => cur.classList.add('hovered')); el.addEventListener('mouseleave', () => cur.classList.remove('hovered')); });
+        const cont = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) { const p = document.createElement('span'); p.style.cssText = `left:${Math.random() * 100}%;width:${Math.random() * 4 + 2}px;height:${Math.random() * 4 + 2}px;animation-duration:${Math.random() * 10 + 8}s;animation-delay:${Math.random() * 10}s;`; cont.appendChild(p); }
+        window.addEventListener('scroll', () => { document.getElementById('main-nav').style.boxShadow = window.scrollY > 80 ? '0 4px 30px rgba(57,255,20,0.15)' : 'none'; document.getElementById('back-top').classList.toggle('visible', window.scrollY > 500); });
+        const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('shown'); obs.unobserve(e.target); } }); }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
+        const cObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { const el = e.target, t = parseInt(el.dataset.target); let c = 0; const s = Math.ceil(t / 60), ti = setInterval(() => { c = Math.min(c + s, t); el.textContent = c; if (c >= t) clearInterval(ti); }, 30); cObs.unobserve(el); } }); }, { threshold: 0.5 });
+        document.querySelectorAll('.count').forEach(el => cObs.observe(el));
+        document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+        function openTab(e, id) { document.querySelectorAll('.specs-pane').forEach(p => p.classList.remove('active')); document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active')); document.getElementById(id).classList.add('active'); e.target.classList.add('active'); }
+        function toggleFaq(el) { const item = el.parentElement, isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!isOpen) item.classList.add('open'); }
+        document.querySelectorAll('button').forEach(btn => { btn.addEventListener('click', function (e) { const r = document.createElement('span'), rect = this.getBoundingClientRect(); Object.assign(r.style, { position: 'absolute', borderRadius: '50%', width: '0', height: '0', background: 'rgba(255,255,255,0.3)', left: (e.clientX - rect.left) + 'px', top: (e.clientY - rect.top) + 'px', transform: 'translate(-50%,-50%)', animation: 'rippleAnim 0.6s ease-out forwards', pointerEvents: 'none' }); if (getComputedStyle(this).position === 'static') this.style.position = 'relative'; this.style.overflow = 'hidden'; this.appendChild(r); setTimeout(() => r.remove(), 700); }); });
+        const rs = document.createElement('style'); rs.textContent = '@keyframes rippleAnim{to{width:300px;height:300px;opacity:0;}}'; document.head.appendChild(rs);
+        console.log('%c🏀 MIAN SPORTS FLOORING — Basketball Court Specialists Pakistan', 'color:#39FF14;font-size:14px;font-weight:bold;background:#050a05;padding:8px;');
+    </script>
+</body>
+
+</html>
